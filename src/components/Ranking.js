@@ -15,6 +15,7 @@ const Ranking = () => {
     });
   }, []);
 
+  // TODO: DISPLAY SORTED OPTIONS
   const renderedRanking = options.map((option) => {
     return (
       <p key={option.id}>
