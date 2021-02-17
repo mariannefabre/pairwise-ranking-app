@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from "react-redux";
+import "./styles.css";
+import Choice from "./components/Choice";
+import Ranking from "./components/Ranking";
+import Home from './components/Home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  
+  const survey = useSelector((state) => state.survey);
+
+    return (
+      <div className="App">
+          {survey.isSurveyFinished && <Ranking/>}
+          {survey.isSurveyStarted && !survey.isSurveyFinished && <Choice />}
+          {!survey.isSurveyStarted && !survey.isSurveyFinished && <Home/>}
+      </div>
+    );
 }
 
 export default App;
