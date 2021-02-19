@@ -2,15 +2,16 @@ html {
   font-size: 16px;
 }
 
-@media only screen and (min-width: 600px){
-  html{
+@media only screen and (min-width: 600px) {
+  html {
     font-size: 20px;
   }
 }
 
-.App, .home {
+.App,
+.home {
   text-align: center;
-  background-color: #282c34;
+  background-color: #1c222d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,12 +20,22 @@ html {
   color: rgb(226, 223, 223);
 }
 
-h1, h2 {
-  margin-bottom: 8vh;
+h1 {
+  background-color: #11141bbf;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: 0;
+  font-size: 1.4em;
+  position: fixed;
+  top: 0px;
+}
+
+h2 {
+  margin-bottom: 5vh;
 }
 
 input {
-  font-size: 16px;
+  font-size: 0.8em;
   height: 40px;
   padding-left: 5px;
 }
@@ -47,7 +58,6 @@ button {
   border-bottom: solid 0.5px rgba(207, 206, 206, 0.575);
   background-color: transparent;
   color: rgb(226, 223, 223);
-  font-size: 18px;
   height: 25px;
 }
 .option-edit {
@@ -63,8 +73,8 @@ button {
   display: flex;
   justify-content: center;
   width: 85vw;
-
   margin: 10px auto;
+  align-items: center;
 }
 .tab input {
   width: 90%;
@@ -77,6 +87,9 @@ button {
   .option-list {
     width: 500px;
   }
+}
+.homepage-step {
+  font-size: 1.5em;
 }
 
 .choice {
@@ -127,16 +140,15 @@ button {
 .ranking {
   font-size: 1.3em;
 }
-
-.ranking-heading{
-  padding: 1.2em 0.2em;
-} 
-
-@media only screen and (min-width: 600px){
-  .ranking-heading{
-    padding: 1.2em 0.7em;
-  } 
+.ranking-table {
+  margin: 0 auto;
 }
-.ranking-row {
-  padding-bottom: 1.5vh;
+.ranking-data {
+  padding: 0.5rem 0.3em;
+}
+
+@media only screen and (min-width: 600px) {
+  .ranking-data {
+    padding: 0.8rem 0.9em;
+  }
 }

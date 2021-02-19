@@ -1,6 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import "../styles.css";
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 const Ranking = () => {
   const topic = useSelector((state) => state.topic);
@@ -24,10 +26,10 @@ const Ranking = () => {
     rank++;
     return (
       <tr key={option.id}>
-        <td className="ranking-row">{rank}</td>
-        <td className="ranking-row">{option.text}</td>
-        <td className="ranking-row">{option.score}</td>
-        <td className="ranking-row">{options.length - 1 - option.score}</td>
+        <td className="ranking-data">{rank}</td>
+        <td className="ranking-data">{option.text}</td>
+        <td className="ranking-data">{option.score} <ThumbUpIcon style={{ fontSize: 20, color: "#48bf48" }}/></td>
+        <td className="ranking-data">{options.length - 1 - option.score} <ThumbDownIcon style={{ fontSize: 20, color: "red"}}/></td>
       </tr>
     );
   });
@@ -35,15 +37,7 @@ const Ranking = () => {
   return (
     <div className="ranking">
       <h2>{topic}</h2>
-      <table>
-        <thead>
-        <tr>
-        <th className="ranking-heading" >Rank</th>
-          <th className="ranking-heading" >Options</th>
-          <th className="ranking-heading">Victory</th>
-          <th className="ranking-heading">Defeat</th>
-        </tr>
-        </thead>
+      <table className="ranking-table">
         <tbody>
         {renderedRanking}
         </tbody>

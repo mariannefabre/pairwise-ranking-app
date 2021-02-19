@@ -20,14 +20,13 @@ const Home = () => {
 
 
   return ( <div className="home">
-    <h1>Pairwise Ranking</h1>
+    <p className="homepage-step">1.</p>
     <AddTopicTab />
     <h2>{topic}</h2>
+    <p className="homepage-step"> 2.</p>
     <AddOptionTab />
     <OptionList />
-    <button className="start-button" onClick={startSurvey}>
-      START
-    </button>
+    <button fontSize="large" className="start-button" onClick={startSurvey}>START</button>
     </div>)
 }
 

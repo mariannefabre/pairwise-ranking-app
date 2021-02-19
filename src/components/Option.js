@@ -3,6 +3,7 @@ import { useDispatch} from "react-redux";
 import { useState } from "react";
 import Delete from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
+import CheckSharpIcon from '@material-ui/icons/CheckSharp';
 
 const Option = ({ option }) => {
   const { id, text} = option;
@@ -38,7 +39,7 @@ const Option = ({ option }) => {
         ) : (
           <p className="option">{text}</p>
         )}
-        {isEditable ? <button onClick={handleEdit}>ok</button> : <EditIcon onClick={handleEdit}></EditIcon>}
+        {isEditable ? <CheckSharpIcon fontSize="small" onClick={handleEdit}></CheckSharpIcon> : <EditIcon fontSize="small" onClick={handleEdit}></EditIcon>}
         
         <Delete onClick={handleRemove}></Delete>
       </li>

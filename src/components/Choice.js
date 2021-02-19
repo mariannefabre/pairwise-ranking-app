@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../styles.css";
-
+import ArrowBackIosSharpIcon from '@material-ui/icons/ArrowBackIosSharp';
+import ArrowForwardIosSharpIcon from '@material-ui/icons/ArrowForwardIosSharp';
 
 const Choice = () => {
   const pairs = useSelector((state) => state.survey.pairsToCompare);
@@ -70,15 +71,6 @@ const Choice = () => {
         dispatchNextQuestion();
       }
     }
-  
-// check className to modify this function
-  const getNavVisibility = (nav) => {
-    if (nav === "prev") {
-      return currentChoice > 0 ? "" : "hidden";
-    } else {
-      return choices[currentChoice] ? "" : "hidden";
-    }
-  };
 
   if (currentChoice < pairs.length)
     return (
@@ -93,22 +85,17 @@ const Choice = () => {
         </button>
 
         <div className="navigation">
-          <button
-            className={getNavVisibility("prev")}
+          <ArrowBackIosSharpIcon
+            className={currentChoice > 0 ? "" : "hidden"}
             onClick={handlePrevNavigation}
-          >
-            {"<"}
-          </button>
+          />
           <p>
             {currentChoice + 1}/{pairs.length}
           </p>
-          <button
-            id="next"
-            className={getNavVisibility("next")}
+          <ArrowForwardIosSharpIcon
+            className={choices[currentChoice] ? "" : "hidden"}
             onClick={handleNextNavigation}
-          >
-            {">"}
-          </button>
+          />
         </div>
       </div>
     );

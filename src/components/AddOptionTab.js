@@ -1,17 +1,13 @@
 import { useDispatch } from "react-redux";
 import '../styles.css';
 
-
 const AddOptionTab = () => {
   const dispatch = useDispatch();
   let input;
 
-  const handleSubmit = (value) => {
-    if (value) dispatch({ type: "ADD_OPTION", name: value });
-  };
-  const keyPressed = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSubmit(e.target.value);
+      dispatch({ type: "ADD_OPTION", name: e.target.value });
       e.target.value = "";
     }
   };
@@ -23,16 +19,8 @@ const AddOptionTab = () => {
         ref={(node) => {
           input = node;
         }}
-        onKeyPress={keyPressed}
+        onKeyPress={handleKeyPress}
       />
-      <button
-        onClick={() => {
-          handleSubmit(input.value);
-          input.value = "";
-        }}
-      >
-        +
-      </button>
     </div>
   );
 };

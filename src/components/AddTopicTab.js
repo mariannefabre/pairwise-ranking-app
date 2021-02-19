@@ -5,12 +5,9 @@ const AddTopicTab = () => {
   const dispatch = useDispatch();
   let input;
 
-  const handleSubmit = (text) => {
-    if (text) dispatch({ type: "ADD_TOPIC", topic: text });
-  };
-  const keyPressed = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSubmit(e.target.value);
+      dispatch({ type: "ADD_TOPIC", topic: e.target.value });
       e.target.value = "";
     }
   };
@@ -21,16 +18,9 @@ const AddTopicTab = () => {
         ref={(node) => {
           input = node;
         }}
-        onKeyPress={keyPressed}
+        onKeyPress={handleKeyPress}
       />
-      <button
-        onClick={() => {
-          handleSubmit(input.value);
-          input.value = "";
-        }}
-      >
-        {">"}
-      </button>
+      
     </div>
   );
 };
