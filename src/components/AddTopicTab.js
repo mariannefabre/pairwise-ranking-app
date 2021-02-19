@@ -17,7 +17,7 @@ const AddTopicTab = () => {
   return (
     <div className="tab">
       <input
-        placeholder="Enter topic (ex: What's the most important for me in a job)"
+        placeholder="Enter topic (ex: What's more important for my next job?)"
         ref={(node) => {
           input = node;
         }}

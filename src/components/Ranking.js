@@ -20,7 +20,6 @@ const Ranking = () => {
   let rankedOptions = options;
   rankedOptions.sort((a, b) => b.score - a.score);
   let rank=0;
-
   const renderedRanking = rankedOptions.map((option) => {
     rank++;
     return (
