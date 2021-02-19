@@ -1,6 +1,15 @@
+html {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 600px){
+  html{
+    font-size: 20px;
+  }
+}
+
 .App, .home {
   text-align: center;
-  font-size: 18px;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -11,7 +20,7 @@
 }
 
 h1, h2 {
-  margin-bottom: 10vh;
+  margin-bottom: 8vh;
 }
 
 input {
@@ -113,4 +122,21 @@ button {
 .start-button {
   margin: 30px 0;
   height: 42px;
+}
+
+.ranking {
+  font-size: 1.3em;
+}
+
+.ranking-heading{
+  padding: 1.2em 0.2em;
+} 
+
+@media only screen and (min-width: 600px){
+  .ranking-heading{
+    padding: 1.2em 0.7em;
+  } 
+}
+.ranking-row {
+  padding-bottom: 1.5vh;
 }

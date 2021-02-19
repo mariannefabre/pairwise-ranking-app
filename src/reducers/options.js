@@ -16,18 +16,18 @@ const options = (state = initialState, action) => {
     case "ADD_OPTION":
       return [
         ...state,
-        { id: nextOptionsId(state), text: action.payload, score: 0 },
+        { id: nextOptionsId(state), text: action.name, score: 0 },
       ];
 
     case "REMOVE_OPTION":
-      return state.filter((option) => action.payload !== option.id);
+      return state.filter((option) => action.id !== option.id);
 
     case "EDIT_OPTION":
       return state.map((item, id) => {
         if (id !== action.id) {
           return item;
         }
-        return { ...item, text: action.payload };
+        return { ...item, text: action.name };
       });
     case "UPDATE_SCORES":
       let optionsWithScores = state.map((x) => ({ ...x }));

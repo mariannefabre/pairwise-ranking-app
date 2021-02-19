@@ -1,15 +1,17 @@
-const survey = (state = { isSurveyStarted: false, isSurveyFinished: false }, action) => {
+const survey = (
+  state = { isSurveyStarted: false, isSurveyFinished: false },
+  action
+) => {
   switch (action.type) {
     case "START_SURVEY":
-      const options = action.payload;
+      const options = action.options;
       let pairs = [];
 
       options.forEach((firstOption) => {
         options.forEach((secondOption) => {
-          if (firstOption !== secondOption) {
+          if (firstOption !== secondOption && !pairs.find((pair) => (pair[0]===secondOption && pair[1]===firstOption))) {  
             pairs.push([firstOption, secondOption]);
           }
-          // add condition to remove duplicates
         });
       });
       return {
@@ -23,16 +25,16 @@ const survey = (state = { isSurveyStarted: false, isSurveyFinished: false }, act
         ...state,
         currentChoice: action.currentChoice,
       };
-      case "PREVIOUS_QUESTION":
+    case "PREVIOUS_QUESTION":
       return {
         ...state,
         currentChoice: action.currentChoice,
       };
-      case "FINISH_SURVEY":
-        return {
-          ...state,
-          isSurveyFinished: true
-        }
+    case "FINISH_SURVEY":
+      return {
+        ...state,
+        isSurveyFinished: true,
+      };
     default:
       return state;
   }

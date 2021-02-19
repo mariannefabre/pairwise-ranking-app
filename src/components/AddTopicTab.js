@@ -5,8 +5,8 @@ const AddTopicTab = () => {
   const dispatch = useDispatch();
   let input;
 
-  const handleSubmit = (value) => {
-    if (value) dispatch({ type: "ADD_TOPIC", payload: value });
+  const handleSubmit = (text) => {
+    if (text) dispatch({ type: "ADD_TOPIC", topic: text });
   };
   const keyPressed = (e) => {
     if (e.key === "Enter") {

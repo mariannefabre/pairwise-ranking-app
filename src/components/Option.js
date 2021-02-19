@@ -4,8 +4,6 @@ import { useState } from "react";
 import Delete from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 
-
-
 const Option = ({ option }) => {
   const { id, text} = option;
   const [content, setContent] = useState(text);
@@ -13,12 +11,12 @@ const Option = ({ option }) => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
-    dispatch({ type: "REMOVE_OPTION", payload: id });
+    dispatch({ type: "REMOVE_OPTION", id: id });
   };
   const handleEdit = () => {
     if (isEditable) {
       if (content !== text) {
-        dispatch({ type: "EDIT_OPTION", id, payload: content });
+        dispatch({ type: "EDIT_OPTION", id, name: content });
       }
       setIsEditable(false);
     } else {

@@ -6,6 +6,7 @@ const Choice = () => {
   const pairs = useSelector((state) => state.survey.pairsToCompare);
   const choices = useSelector((state) => state.choices);
   const currentChoice = useSelector((state) => state.survey.currentChoice);
+  const topic = useSelector(state => state.topic);
   const dispatch = useDispatch();
 
   const currentPair = pairs[currentChoice];
@@ -61,16 +62,16 @@ const Choice = () => {
     }
   };
 
-  const handleNavigation = (e) => {
-    if (e.target.innerHTML === "&lt;") {
+  const handlePrevNavigation = () => {
       dispatchPreviousQuestion();
-    } else if (e.target.innerHTML === "&gt;") {
+  }
+  const handleNextNavigation = () => {
       if (choices[currentChoice]) {
         dispatchNextQuestion();
       }
     }
-  };
-
+  
+// check className to modify this function
   const getNavVisibility = (nav) => {
     if (nav === "prev") {
       return currentChoice > 0 ? "" : "hidden";
@@ -82,7 +83,7 @@ const Choice = () => {
   if (currentChoice < pairs.length)
     return (
       <div className="choice">
-        <h2>Pick one option</h2>
+        <h2>{topic}</h2>
         <button onClick={handleChoice} className={getClassName(firstOption)}>
           {firstOption.text}
         </button>
@@ -94,7 +95,7 @@ const Choice = () => {
         <div className="navigation">
           <button
             className={getNavVisibility("prev")}
-            onClick={handleNavigation}
+            onClick={handlePrevNavigation}
           >
             {"<"}
           </button>
@@ -104,7 +105,7 @@ const Choice = () => {
           <button
             id="next"
             className={getNavVisibility("next")}
-            onClick={handleNavigation}
+            onClick={handleNextNavigation}
           >
             {">"}
           </button>

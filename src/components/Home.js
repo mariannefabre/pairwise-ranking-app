@@ -13,7 +13,7 @@ const Home = () => {
 
   const startSurvey = () => {
     if (topic && options) {
-      dispatch({ type: "START_SURVEY", payload: options });
+      dispatch({ type: "START_SURVEY", options: options });
     }
     // add message for missing information
   };
@@ -22,8 +22,8 @@ const Home = () => {
   return ( <div className="home">
     <h1>Pairwise Ranking</h1>
     <AddTopicTab />
-    <AddOptionTab />
     <h2>{topic}</h2>
+    <AddOptionTab />
     <OptionList />
     <button className="start-button" onClick={startSurvey}>
       START

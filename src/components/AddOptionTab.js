@@ -7,7 +7,7 @@ const AddOptionTab = () => {
   let input;
 
   const handleSubmit = (value) => {
-    if (value) dispatch({ type: "ADD_OPTION", payload: value });
+    if (value) dispatch({ type: "ADD_OPTION", name: value });
   };
   const keyPressed = (e) => {
     if (e.key === "Enter") {
