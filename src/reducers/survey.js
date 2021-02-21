@@ -9,11 +9,18 @@ const survey = (
 
       options.forEach((firstOption) => {
         options.forEach((secondOption) => {
-          if (firstOption !== secondOption && !pairs.find((pair) => (pair[0]===secondOption && pair[1]===firstOption))) {  
+          if (
+            firstOption !== secondOption &&
+            !pairs.find(
+              (pair) => pair[0] === secondOption && pair[1] === firstOption
+            )
+          ) {
             pairs.push([firstOption, secondOption]);
           }
         });
       });
+      pairs.sort(() => Math.random() - 0.5);
+
       return {
         ...state,
         isSurveyStarted: true,

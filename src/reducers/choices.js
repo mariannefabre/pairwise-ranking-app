@@ -1,5 +1,4 @@
 const choices = (state = [], action) => {
-
   switch (action.type) {
     case "MAKE_CHOICE":
       if (state[action.currentChoice]) {

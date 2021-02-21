@@ -3,6 +3,9 @@ import options from "./reducers/options";
 import topic from "./reducers/topic";
 import choices from './reducers/choices';
 import survey from './reducers/survey';
+import { loadState } from "./localStorage";
+
+const persistedState = loadState();
 
 export default configureStore({
   reducer: {
@@ -10,5 +13,6 @@ export default configureStore({
     options,
     survey,
     choices,
+    persistedState,
   },
 });

@@ -18,6 +18,7 @@ html {
   align-items: center;
   justify-content: center;
   color: rgb(226, 223, 223);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -36,12 +37,30 @@ h2 {
 
 input {
   font-size: 0.8em;
-  height: 40px;
-  padding-left: 5px;
+  height: 45px;
+  text-indent: 12px;
+  border: none;
+  color: #1c222d;
+  transform: scale(1);
+  background-color: rgb(226, 223, 223);
+  transition: all 0.3s ease-in-out;
+}
+input:focus {
+  background: none;
+  transition: 0.3s;
+  font-family: "Lato", sans-serif;
+  border: 1px solid rgb(226, 223, 223);
+  color: rgb(226, 223, 223);
+}
+input:focus::placeholder {
+  color: transparent;
 }
 button {
   font-size: 16px;
   padding: 0 15px;
+}
+button:focus {
+  outline: none;
 }
 
 .list-item {
@@ -55,10 +74,10 @@ button {
   padding: 8px 2px;
   text-align: left;
   border: unset;
-  border-bottom: solid 0.5px rgba(207, 206, 206, 0.575);
-  background-color: transparent;
+  background-color: #1c222d;
   color: rgb(226, 223, 223);
   height: 25px;
+  text-indent: 0;
 }
 .option-edit {
   color: rgb(161, 158, 158);
@@ -72,22 +91,45 @@ button {
 .tab {
   display: flex;
   justify-content: center;
-  width: 85vw;
+  width: 90vw;
   margin: 10px auto;
   align-items: center;
 }
-.tab input {
-  width: 90%;
-}
 
+@media only screen and (min-width: 400px) {
+  .tab {
+    width: 85vw;
+  }
+  .option-list {
+    width: 60vw;
+  }
+}
 @media only screen and (min-width: 700px) {
   .tab {
     width: 600px;
   }
   .option-list {
-    width: 500px;
+    width: 400px;
   }
 }
+
+.tab input {
+  width: 90%;
+  margin-right: 5px;
+}
+.tab input:focus {
+  outline: none;
+}
+
+@media only screen and (min-width: 550px) {
+  #tab-add-button {
+    display: none;
+  }
+  .tab input {
+    margin-right: 0;
+  }
+}
+
 .homepage-step {
   font-size: 1.5em;
 }
@@ -107,16 +149,47 @@ button {
   border: solid 1px rgb(226, 223, 223);
   color: rgb(226, 223, 223);
 }
+
+#first-option {
+  animation: slideInFromLeft 0.5s 1;
+}
+#second-option {
+  animation: slideInFromRight 0.5s 1;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translate(-50vw, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes slideInFromRight {
+  0% {
+    transform: translate(50vw, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .choice-option:active,
 .choice-option-selected {
   width: 90%;
   max-width: 500px;
   margin: 40px auto;
   padding: 20px 0;
-  font-size: 20px;
   border: solid 1px rgb(226, 223, 223);
   background-color: rgb(226, 223, 223);
   color: #282c34;
+  font-size: 20px;
+}
+
+.choice-option:hover {
+  border: none;
+  color: #1c222d;
+  background-color: rgb(226, 223, 223);
+  transition: all 0.4s ease-in-out;
 }
 
 .navigation {
@@ -135,6 +208,22 @@ button {
 .start-button {
   margin: 30px 0;
   height: 42px;
+  background: none;
+  transition: 0.5s;
+  font-family: "Lato", sans-serif;
+  border: 1px solid rgb(226, 223, 223);
+  color: rgb(226, 223, 223);
+}
+.start-button:focus {
+  outline: none;
+}
+.start-button:hover {
+  border: none;
+  color: #1c222d;
+  font-size: 18px;
+  transform: scale(1.1);
+  background-color: rgb(226, 223, 223);
+  transition: all 0.3s ease-in-out;
 }
 
 .ranking {

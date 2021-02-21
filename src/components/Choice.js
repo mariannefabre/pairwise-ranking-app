@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import "../styles.css";
-import ArrowBackIosSharpIcon from '@material-ui/icons/ArrowBackIosSharp';
-import ArrowForwardIosSharpIcon from '@material-ui/icons/ArrowForwardIosSharp';
+import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
+import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
 
 const Choice = () => {
   const pairs = useSelector((state) => state.survey.pairsToCompare);
   const choices = useSelector((state) => state.choices);
   const currentChoice = useSelector((state) => state.survey.currentChoice);
-  const topic = useSelector(state => state.topic);
+  const topic = useSelector((state) => state.topic);
   const dispatch = useDispatch();
 
   const currentPair = pairs[currentChoice];
@@ -64,23 +64,33 @@ const Choice = () => {
   };
 
   const handlePrevNavigation = () => {
-      dispatchPreviousQuestion();
-  }
+    dispatchPreviousQuestion();
+  };
   const handleNextNavigation = () => {
-      if (choices[currentChoice]) {
-        dispatchNextQuestion();
-      }
+    if (choices[currentChoice]) {
+      dispatchNextQuestion();
     }
+  };
 
   if (currentChoice < pairs.length)
     return (
       <div className="choice">
         <h2>{topic}</h2>
-        <button onClick={handleChoice} className={getClassName(firstOption)}>
+        <button
+          id="first-option"
+          key={Math.random()}
+          onClick={handleChoice}
+          className={getClassName(firstOption)}
+        >
           {firstOption.text}
         </button>
         <p>VS</p>
-        <button className={getClassName(secondOption)} onClick={handleChoice}>
+        <button
+          id="second-option"
+          key={Math.random()}
+          className={getClassName(secondOption)}
+          onClick={handleChoice}
+        >
           {secondOption.text}
         </button>
 

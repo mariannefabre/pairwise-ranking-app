@@ -1,25 +1,40 @@
 import { useDispatch } from "react-redux";
 import '../styles.css';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+
 
 const AddOptionTab = () => {
   const dispatch = useDispatch();
   let input;
 
-  const handleKeyPress = (e) => {
+  const handleClick = (value) => {
+    if(value) dispatch({ type: "ADD_OPTION", name: value });
+  }
+
+  const keyPressed = (e) => {
     if (e.key === "Enter") {
-      dispatch({ type: "ADD_OPTION", name: e.target.value });
+      handleClick(e.target.value);
       e.target.value = "";
+      e.target.blur();
     }
   };
 
   return (
     <div className="tab">
       <input
-        placeholder="Enter option (ex: Work-life balance)"
+        placeholder="ex: Work-life balance"
         ref={(node) => {
           input = node;
         }}
-        onKeyPress={handleKeyPress}
+        onKeyPress={keyPressed}
+      />
+      <AddCircleIcon
+      id="tab-add-button"
+      fontSize="large"
+        onClick={() => {
+          handleClick(input.value);
+          input.value = "";
+        }}
       />
     </div>
   );
