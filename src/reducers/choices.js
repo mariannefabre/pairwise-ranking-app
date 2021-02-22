@@ -9,7 +9,7 @@ const choices = (state = [], action) => {
           return {
             id: action.currentChoice,
             pair: action.pair,
-            result: action.result,
+            selectedOption: action.selectedOption,
           };
         });
       } else {
@@ -18,7 +18,7 @@ const choices = (state = [], action) => {
           {
             id: action.currentChoice,
             pair: action.pair,
-            result: action.result,
+            selectedOption: action.selectedOption,
           },
         ];
       }

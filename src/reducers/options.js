@@ -30,17 +30,17 @@ const options = (state = initialState, action) => {
         return { ...item, text: action.name };
       });
     case "UPDATE_SCORES":
-      let optionsWithScores = state.map((x) => ({ ...x, score: 0 }));
+      let currentOptions = state.map((x) => ({ ...x, score: 0 }));
       if (action.choices) {
         action.choices.forEach((choice) => {
-          let chosenOption = optionsWithScores.find(
-            (option) => option.id === choice.result.id
+          let chosenOption = currentOptions.find(
+            (option) => option.id === choice.selectedOption
           );
           chosenOption.score++;
         });
       }
       return state.map((item, id) => {
-        return { ...item, score: optionsWithScores[id].score };
+        return { ...item, score: currentOptions[id].score };
       });
     default:
       return state;

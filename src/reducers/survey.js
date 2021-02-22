@@ -9,13 +9,13 @@ const survey = (
 
       options.forEach((firstOption) => {
         options.forEach((secondOption) => {
+          const firstId = firstOption.id;
+          const secondId = secondOption.id;
           if (
-            firstOption !== secondOption &&
-            !pairs.find(
-              (pair) => pair[0] === secondOption && pair[1] === firstOption
-            )
+            firstId !== secondId &&
+            !pairs.find((pair) => pair[0] === secondId && pair[1] === firstId)
           ) {
-            pairs.push([firstOption, secondOption]);
+            pairs.push([firstId, secondId]);
           }
         });
       });
@@ -25,7 +25,7 @@ const survey = (
         ...state,
         isSurveyStarted: true,
         isSurveyFinished: false,
-        pairsToCompare: pairs,
+        pairs,
         currentChoice: 0,
       };
     case "NEXT_QUESTION":

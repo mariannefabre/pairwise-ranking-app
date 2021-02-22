@@ -1,18 +1,21 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useOption } from "../util/helper";
 import "../styles.css";
 import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
 import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
 
 const Choice = () => {
-  const pairs = useSelector((state) => state.survey.pairsToCompare);
+  const pairs = useSelector((state) => state.survey.pairs);
   const choices = useSelector((state) => state.choices);
   const currentChoice = useSelector((state) => state.survey.currentChoice);
   const topic = useSelector((state) => state.topic);
   const dispatch = useDispatch();
+  const firstOption = useOption(pairs[currentChoice][0]).text;
+  const secondOption = useOption(pairs[currentChoice][1]).text;
 
   const currentPair = pairs[currentChoice];
-  const firstOption = currentPair[0];
-  const secondOption = currentPair[1];
+  const firstOptionId = currentPair[0];
+  const secondOptionId = currentPair[1];
 
   const dispatchNextQuestion = () => {
     dispatch({
@@ -29,11 +32,12 @@ const Choice = () => {
   };
 
   const dispatchSaveChoice = (selectedOption) => {
+    console.log(selectedOption);
     dispatch({
       type: "SAVE_CHOICE",
-      currentChoice: currentChoice,
+      currentChoice,
       pair: currentPair,
-      result: selectedOption,
+      selectedOption,
     });
   };
 
@@ -46,11 +50,11 @@ const Choice = () => {
   const handleChoice = (e) => {
     let selected;
     switch (e.target.innerHTML) {
-      case firstOption.text:
-        selected = firstOption;
+      case firstOption:
+        selected = firstOptionId;
         break;
-      case secondOption.text:
-        selected = secondOption;
+      case secondOption:
+        selected = secondOptionId;
         break;
       default:
         break;
@@ -71,9 +75,9 @@ const Choice = () => {
     }
   };
 
-  const getClassName = (option) => {
+  const getClassName = (optionId) => {
     if (choices[currentChoice]) {
-      return choices[currentChoice].result.id === option.id
+      return choices[currentChoice].result === optionId
         ? "choice-option-selected"
         : "choice-option";
     } else {
@@ -98,18 +102,18 @@ const Choice = () => {
           id="first-option"
           key={Math.random()}
           onClick={handleChoice}
-          className={getClassName(firstOption)}
+          className={getClassName(firstOptionId)}
         >
-          {firstOption.text}
+          {firstOption}
         </button>
         <p>VS</p>
         <button
           id="second-option"
           key={Math.random()}
-          className={getClassName(secondOption)}
+          className={getClassName(secondOptionId)}
           onClick={handleChoice}
         >
-          {secondOption.text}
+          {secondOption}
         </button>
 
         <div className="navigation">

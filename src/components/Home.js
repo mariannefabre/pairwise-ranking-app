@@ -10,10 +10,8 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const startSurvey = () => {
-    if (topic && options) {
-      dispatch({ type: "START_SURVEY", options: options });
-    }
-  };
+      dispatch({ type: "START_SURVEY", options });
+    };
 
   return (
     <div className="home">
