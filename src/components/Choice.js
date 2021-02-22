@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useOption } from "../util/helper";
 import "../styles.css";
-import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
-import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
+import Navigation from "./Navigation";
 
 const Choice = () => {
   const pairs = useSelector((state) => state.survey.pairs);
@@ -24,15 +23,7 @@ const Choice = () => {
     });
   };
 
-  const dispatchPreviousQuestion = () => {
-    dispatch({
-      type: "PREVIOUS_QUESTION",
-      currentChoice: currentChoice - 1,
-    });
-  };
-
   const dispatchSaveChoice = (selectedOption) => {
-    console.log(selectedOption);
     dispatch({
       type: "SAVE_CHOICE",
       currentChoice,
@@ -65,8 +56,8 @@ const Choice = () => {
     } else {
       dispatch({ type: "FINISH_SURVEY" });
       saveChoice(selected).then((resolvedValue) => {
-        console.log(resolvedValue);
-        console.log(choices);
+        /*     console.log(resolvedValue);
+        console.log(choices); */
         dispatch({
           type: "UPDATE_SCORES",
           choices: choices,
@@ -77,20 +68,11 @@ const Choice = () => {
 
   const getClassName = (optionId) => {
     if (choices[currentChoice]) {
-      return choices[currentChoice].result === optionId
+      return choices[currentChoice].selectedOption === optionId
         ? "choice-option-selected"
         : "choice-option";
     } else {
       return "choice-option";
-    }
-  };
-
-  const handlePrevNavigation = () => {
-    dispatchPreviousQuestion();
-  };
-  const handleNextNavigation = () => {
-    if (choices[currentChoice]) {
-      dispatchNextQuestion();
     }
   };
 
@@ -115,20 +97,11 @@ const Choice = () => {
         >
           {secondOption}
         </button>
-
-        <div className="navigation">
-          <ArrowBackIosSharpIcon
-            className={currentChoice > 0 ? "" : "hidden"}
-            onClick={handlePrevNavigation}
-          />
-          <p>
-            {currentChoice + 1}/{pairs.length}
-          </p>
-          <ArrowForwardIosSharpIcon
-            className={choices[currentChoice] ? "" : "hidden"}
-            onClick={handleNextNavigation}
-          />
-        </div>
+        <Navigation
+          currentChoice={currentChoice}
+          choices={choices}
+          numberOfQuestions={pairs.length}
+        />
       </div>
     );
 };
