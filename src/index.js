@@ -8,15 +8,14 @@ import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 
 import throttle from "lodash/throttle";
-import { saveState } from "./localStorage";
-
-
+import { saveState, } from "./localStorage";
 
 store.subscribe(
   throttle(() => {
     saveState(store.getState());
   })
 );
+
 
 ReactDOM.render(
   <React.StrictMode>
