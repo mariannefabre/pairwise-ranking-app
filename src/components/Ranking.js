@@ -6,11 +6,20 @@ import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 const Ranking = () => {
   const topic = useSelector((state) => state.topic);
   const options = useSelector((state) => state.options);
+  const choices = useSelector((state) => state.choices);
   const dispatch = useDispatch();
 
+  const optionsWithScores = options.map((x) => ({ ...x, score:0 }));
+
+  choices.forEach((choice) => {
+    let chosenOption = optionsWithScores.find(
+      (option) => option.id === choice.selectedOption
+    );
+    chosenOption.score++;
+  });
+    
   // sort from highest to lowest score
-  let rankedOptions = options.map((x) => ({ ...x }));
-  rankedOptions.sort((a, b) => b.score - a.score);
+  optionsWithScores.sort((a, b) => b.score - a.score);
   let rank = 0;
 
   const handleRetakeTest = () => {
@@ -19,16 +28,12 @@ const Ranking = () => {
       options: options,
     });
     dispatch({
-      type: "UPDATE_SCORES",
-      choices: [],
-    });
-    dispatch({
       type: "RETAKE_TEST",
     });
     
   };
 
-  const renderedRanking = rankedOptions.map((option) => {
+  const renderedRanking = optionsWithScores.map((option) => {
     rank++;
     return (
       <tr key={option.id}>
