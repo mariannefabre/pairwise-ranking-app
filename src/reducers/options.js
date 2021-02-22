@@ -30,13 +30,15 @@ const options = (state = initialState, action) => {
         return { ...item, text: action.name };
       });
     case "UPDATE_SCORES":
-      let optionsWithScores = state.map((x) => ({ ...x }));
-      action.choices.forEach((choice) => {
-        const index = state.indexOf(choice.result);
-        if (index !== -1) {
-          optionsWithScores[index].score++;
-        }
-      });
+      let optionsWithScores = state.map((x) => ({ ...x, score: 0 }));
+      if (action.choices) {
+        action.choices.forEach((choice) => {
+          let chosenOption = optionsWithScores.find(
+            (option) => option.id === choice.result.id
+          );
+          chosenOption.score++;
+        });
+      }
       return state.map((item, id) => {
         return { ...item, score: optionsWithScores[id].score };
       });

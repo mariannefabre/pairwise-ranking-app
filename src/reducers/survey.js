@@ -24,6 +24,7 @@ const survey = (
       return {
         ...state,
         isSurveyStarted: true,
+        isSurveyFinished: false,
         pairsToCompare: pairs,
         currentChoice: 0,
       };

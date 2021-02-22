@@ -28,6 +28,21 @@ const Choice = () => {
     });
   };
 
+  const dispatchSaveChoice = (selectedOption) => {
+    dispatch({
+      type: "SAVE_CHOICE",
+      currentChoice: currentChoice,
+      pair: currentPair,
+      result: selectedOption,
+    });
+  };
+
+  const saveChoice = (selectedOption) =>
+    new Promise((resolve, reject) => {
+      dispatchSaveChoice(selectedOption);
+      resolve("It worked");
+    });
+
   const handleChoice = (e) => {
     let selected;
     switch (e.target.innerHTML) {
@@ -40,22 +55,25 @@ const Choice = () => {
       default:
         break;
     }
-    dispatch({
-      type: "MAKE_CHOICE",
-      currentChoice: currentChoice,
-      pair: currentPair,
-      result: selected,
-    });
     if (pairs[currentChoice + 1]) {
+      dispatchSaveChoice(selected);
       dispatchNextQuestion();
     } else {
       dispatch({ type: "FINISH_SURVEY" });
+      saveChoice(selected).then((resolvedValue) => {
+        console.log(resolvedValue);
+        console.log(choices);
+        dispatch({
+          type: "UPDATE_SCORES",
+          choices: choices,
+        });
+      });
     }
   };
 
   const getClassName = (option) => {
     if (choices[currentChoice]) {
-      return choices[currentChoice].result === option
+      return choices[currentChoice].result.id === option.id
         ? "choice-option-selected"
         : "choice-option";
     } else {

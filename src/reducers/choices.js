@@ -1,6 +1,6 @@
 const choices = (state = [], action) => {
   switch (action.type) {
-    case "MAKE_CHOICE":
+    case "SAVE_CHOICE":
       if (state[action.currentChoice]) {
         return state.map((choice, index) => {
           if (index !== action.currentChoice) {
@@ -22,6 +22,8 @@ const choices = (state = [], action) => {
           },
         ];
       }
+    case "RETAKE_TEST":
+      return [];
     default:
       return state;
   }
