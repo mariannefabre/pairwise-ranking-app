@@ -11,6 +11,7 @@ function App() {
     return (
       <div className="App">
             <h1>Pairwise Ranking</h1>
+            <div className="container"></div>
           {survey.isSurveyFinished && <Ranking/>}
           {survey.isSurveyStarted && !survey.isSurveyFinished && <Choice />}
           {!survey.isSurveyStarted && !survey.isSurveyFinished && <Home/>}

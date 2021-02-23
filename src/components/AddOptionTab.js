@@ -30,7 +30,6 @@ const AddOptionTab = () => {
       />
       <AddCircleIcon
       id="tab-add-button"
-      fontSize="large"
         onClick={() => {
           handleClick(input.value);
           input.value = "";
