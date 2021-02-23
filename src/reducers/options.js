@@ -29,6 +29,8 @@ const options = (state = initialState, action) => {
         }
         return { ...item, text: action.name};
       });
+      case "CREATE_NEW_QUESTIONNAIRE":
+      return [];
     default:
       return state;
   }

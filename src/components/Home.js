@@ -10,8 +10,9 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const startSurvey = () => {
+    if (options.length > 0 && topic)
       dispatch({ type: "START_QUESTIONNAIRE", options });
-    };
+  };
 
   return (
     <div className="home">

@@ -31,13 +31,7 @@ const Choice = () => {
       selectedOption,
     });
   };
-
-/*   const saveChoice = (selectedOption) =>
-    new Promise((resolve, reject) => {
-      dispatchSaveChoice(selectedOption);
-      resolve("It worked");
-    });
- */
+  
   const handleChoice = (e) => {
     let selected;
     switch (e.target.innerHTML) {

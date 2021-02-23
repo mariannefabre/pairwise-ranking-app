@@ -24,6 +24,10 @@ const choices = (state = [], action) => {
       }
     case "RETAKE_TEST":
       return [];
+    case "CREATE_NEW_QUESTIONNAIRE":
+      return [];
+    case "GO_TO_HOMEPAGE":
+      return [];
     default:
       return state;
   }

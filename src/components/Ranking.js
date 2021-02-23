@@ -34,7 +34,7 @@ const Ranking = () => {
 
   const handleCreateNew = () => {
     // add code to erase state
-    dispatch({ type: "GO_TO_HOMEPAGE" });
+    dispatch({ type: "CREATE_NEW_QUESTIONNAIRE" });
   };
 
   const renderedRanking = optionsWithScores.map((option) => {

@@ -13,9 +13,15 @@ const survey = (
           const secondId = secondOption.id;
           if (
             firstId !== secondId &&
-            !pairs.find((pair) => pair[0] === secondId && pair[1] === firstId)
+            !pairs.find(
+              (pair) =>
+                (pair[0] === secondId && pair[1] === firstId) ||
+                (pair[0] === firstId && pair[1] === secondId)
+            )
           ) {
-            pairs.push([firstId, secondId]);
+            Math.random() < 0.5
+              ? pairs.push([firstId, secondId])
+              : pairs.push([secondId, firstId]);
           }
         });
       });
@@ -44,9 +50,15 @@ const survey = (
         isSurveyFinished: true,
       };
     case "GO_TO_HOMEPAGE":
-      // figure out if we want to keep the previous data or not
       return {
         ...state,
+        isSurveyStarted: false,
+        isSurveyFinished: false,
+      };
+    case "CREATE_NEW_QUESTIONNAIRE":
+      return {
+        ...state,
+        pairs: [],
         isSurveyStarted: false,
         isSurveyFinished: false,
       };
