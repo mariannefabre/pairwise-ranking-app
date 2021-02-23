@@ -33,7 +33,6 @@ const Ranking = () => {
   };
 
   const handleCreateNew = () => {
-    // add code to erase state
     dispatch({ type: "CREATE_NEW_QUESTIONNAIRE" });
   };
 
@@ -45,11 +44,11 @@ const Ranking = () => {
         <td className="ranking-data">{option.text}</td>
         <td className="ranking-data">
           {option.score}{" "}
-          <ThumbUpIcon style={{ fontSize: 20, color: "#48bf48" }} />
+          <ThumbUpIcon className="thumb-up"  />
         </td>
         <td className="ranking-data">
           {options.length - 1 - option.score}{" "}
-          <ThumbDownIcon style={{ fontSize: 20, color: "red" }} />
+          <ThumbDownIcon className="thumb-down" />
         </td>
       </tr>
     );

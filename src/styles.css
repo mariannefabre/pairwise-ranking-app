@@ -1,7 +1,7 @@
 #root {
-  --main-bg-color: #bdb8b86e;
-  --second-color: #193d6bce;
-  --third-color: #f1efefe1;
+  --main-bg-color: #ebebebb9;
+  --second-color: #193d6b;
+  --third-color: #ffffffe3;
   background-color: var(--main-bg-color);
   font-size: 18px;
 }
@@ -16,11 +16,15 @@
     font-size: 22px;
   }
 }
-
+.container {
+  height: 53px;
+}
+.App {
+  min-height: 100vh;
+}
 .App,
 .home {
   text-align: center;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,12 +32,13 @@
   color: var(--second-color);
   overflow-x: hidden;
 }
-.container {
-  margin-top: 53px;
-}
 
 h1 {
-  background-color: var(--second-color);
+  background: linear-gradient(
+    90deg,
+    rgba(8, 30, 46, 1) 0%,
+    rgba(0, 102, 178, 1) 100%
+  );
   padding: 10px 0;
   width: 100%;
   margin: 0 auto;
@@ -77,6 +82,8 @@ input:focus::placeholder {
   font-family: "Lato", sans-serif;
   border: 1.5px solid transparent;
   color: var(--third-color);
+  font-weight: 550;
+  border-radius: 5px;
 }
 .button:focus {
   outline: none;
@@ -180,10 +187,10 @@ input:focus::placeholder {
 }
 
 #first-option {
-  animation: slideInFromLeft 0.5s 1;
+  animation: slideInFromLeft 0.3s 1;
 }
 #second-option {
-  animation: slideInFromRight 0.5s 1;
+  animation: slideInFromRight 0.3s 1;
 }
 
 @keyframes slideInFromLeft {
@@ -235,9 +242,13 @@ input:focus::placeholder {
   visibility: hidden;
 }
 
-
 .ranking {
+  background-color: var(--third-color);
   font-size: 1.3em;
+  border-radius: 5px;
+  border: 0.5px solid #cfcdcdd7;
+  padding: 15px;
+  margin: 5px;
 }
 .ranking-table {
   margin: 50px auto;
@@ -250,4 +261,12 @@ input:focus::placeholder {
   .ranking-data {
     padding: 0.8rem 0.9em;
   }
+}
+.thumb-up {
+  font-size: 20;
+  color: var(var(--second-color));
+}
+.thumb-down {
+  font-size: 20;
+  color: rgb(194, 10, 10);
 }

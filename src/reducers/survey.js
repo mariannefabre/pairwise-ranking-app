@@ -59,6 +59,7 @@ const survey = (
       return {
         ...state,
         pairs: [],
+        currentChoice:0,
         isSurveyStarted: false,
         isSurveyFinished: false,
       };
