@@ -1,7 +1,7 @@
 #root {
-  --main-bg-color: #ebebebb9;
-  --second-color: #193d6b;
-  --third-color: #ffffffe3;
+  --main-bg-color: #ffffffee;
+  --second-color: #6E44FF;
+  --third-color: #ffffffee;
   background-color: var(--main-bg-color);
   font-size: 18px;
 }
@@ -34,37 +34,46 @@
 }
 
 h1 {
-  background: linear-gradient(
+/*   background: linear-gradient(
     90deg,
-    rgba(8, 30, 46, 1) 0%,
-    rgba(0, 102, 178, 1) 100%
-  );
+    rgb(83, 33, 148) 0%,
+    rgb(59, 56, 238) 100%
+  ); */
+  background-color: #f1f0f0;
   padding: 10px 0;
   width: 100%;
   margin: 0 auto;
   font-size: 1.4em;
   position: absolute;
   top: 0px;
-  color: var(--third-color);
+  color: #5f5f5f;
+  font-weight:300;
 }
 
 h2 {
   margin-bottom: 5vh;
+  color: #5f5f5f;
+  font-weight:300;
 }
 
 input {
-  font-size: 1rem;
+  font-size: 0.9rem;
   height: 45px;
-  text-indent: 12px;
   border: none;
+  text-indent: 2px;
   color: var(--second-color);
+  border-radius: 5px;
   border: 2px solid transparent;
   background-color: var(--third-color);
   transition: all 0.1s;
 }
+@media only screen and (min-width: 500px) {
+  input {
+    font-size: 1rem;
+    text-indent: 12px;
+  }
+}
 input:focus {
-  background: none;
-  font-family: "Lato", sans-serif;
   border: 2px solid var(--second-color);
   color: var(--second-color);
 }
@@ -98,7 +107,13 @@ input:focus::placeholder {
 .list-item {
   display: flex;
   align-items: center;
+  background-color: var(--third-color);
+  border-radius: 5px;
+  margin: 8px;
+  padding: 2px 10px;
+  box-shadow: 0 0 7px rgb(179, 179, 179);
 }
+
 .option,
 .option-edit {
   width: 90%;
@@ -108,9 +123,17 @@ input:focus::placeholder {
   border: unset;
   height: 25px;
   text-indent: 0;
+  color: rgb(71, 71, 71);
 }
 .option-edit {
   color: var(--second-color);
+  outline:none;
+  box-shadow: 0 0 10px var(--second-color);
+}
+.option-edit {
+  color: var(--second-color);
+  outline:none;
+  box-shadow: 0 0 10px var(--second-color);
 }
 .option-list {
   list-style: none;
@@ -147,19 +170,28 @@ input:focus::placeholder {
   width: 90%;
   margin-right: 5px;
   margin-left: 30px;
-  border: 1.5px solid var(--second-color);
+border: 1.5px solid  rgb(179, 179, 179);
+  transition: all 0.1s;
 }
 .tab input:focus {
+  box-shadow: 0 0 8px var(--second-color);
   outline: none;
 }
 #tab-add-button {
   cursor: pointer;
   font-size: 35px;
 }
+.tab-enter-button {
+  margin: 0;
+  padding: 0 8px;
+  height: 35px;
+}
 @media only screen and (min-width: 550px) {
-  #tab-add-button {
+  #tab-add-button,
+  .tab-enter-button {
     display: none;
   }
+
   .tab input {
     margin-right: 0;
     margin-left: 0;
@@ -169,7 +201,11 @@ input:focus::placeholder {
 .homepage-step {
   font-size: 1.5em;
 }
-
+#icon {
+  font-size: 28px;
+  margin: 0 3px;
+  cursor: pointer;
+}
 .choice {
   width: 80vw;
   font-size: 22px;
@@ -181,7 +217,7 @@ input:focus::placeholder {
   margin: 40px auto;
   padding: 20px 0;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 22px;
   border: solid 1px var(--second-color);
   color: var(--second-color);
 }
@@ -233,11 +269,11 @@ input:focus::placeholder {
   display: inline-flex;
   justify-content: space-evenly;
   margin: 20px 0;
+  font-size: 18px;
 }
-.navigation p {
-  font-size: 15px;
+#nav-icon {
+  font-size: 50px;
 }
-
 .hidden {
   visibility: hidden;
 }
@@ -251,6 +287,7 @@ input:focus::placeholder {
   margin: 5px;
 }
 .ranking-table {
+  color: #5f5f5f;
   margin: 50px auto;
 }
 .ranking-data {
@@ -264,9 +301,9 @@ input:focus::placeholder {
 }
 .thumb-up {
   font-size: 20;
-  color: var(var(--second-color));
+  color: #b688ff;
 }
 .thumb-down {
   font-size: 20;
-  color: rgb(194, 10, 10);
+  color: #f1f0f0;
 }

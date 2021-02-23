@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
 import "../styles.css";
-import AddCircleIcon from "@material-ui/icons/AddCircle";
 
 const AddTopicTab = () => {
   const dispatch = useDispatch();
@@ -26,13 +25,13 @@ const AddTopicTab = () => {
         }}
         onKeyPress={keyPressed}
       />
-      <AddCircleIcon
-      id="tab-add-button"
+      <button
+      className="button tab-enter-button"
         onClick={() => {
           handleClick(input.value);
           input.value = "";
         }}
-      />
+      >ok</button>
     </div>
   );
 };

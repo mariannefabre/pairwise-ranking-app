@@ -1,5 +1,5 @@
-import ArrowBackIosSharpIcon from "@material-ui/icons/ArrowBackIosSharp";
-import ArrowForwardIosSharpIcon from "@material-ui/icons/ArrowForwardIosSharp";
+import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import { useDispatch } from "react-redux";
 
 const Navigation = ({ currentChoice, choices, numberOfQuestions }) => {
@@ -25,15 +25,17 @@ const Navigation = ({ currentChoice, choices, numberOfQuestions }) => {
   };
   return (
     <div className="navigation">
-      <ArrowBackIosSharpIcon
-        className={currentChoice >= 0 ? "" : "hidden"}
+      <NavigateBeforeIcon
+        id="nav-icon"
+        className={currentChoice >= 0 ? "nav-icon" : "hidden"}
         onClick={handlePrevQuestion}
       />
       <p>
         {currentChoice + 1}/{numberOfQuestions}
       </p>
-      <ArrowForwardIosSharpIcon
-        className={choices[currentChoice] ? "" : "hidden"}
+      <NavigateNextIcon
+        id="nav-icon"
+        className={choices[currentChoice] ? "nav-icon" : "hidden"}
         onClick={handleNextQuestion}
       />
     </div>

@@ -39,9 +39,9 @@ const Option = ({ option }) => {
         ) : (
           <p className="option">{text}</p>
         )}
-        {isEditable ? <CheckSharpIcon fontSize="small" onClick={handleEdit}></CheckSharpIcon> : <EditIcon fontSize="small" onClick={handleEdit}></EditIcon>}
+        {isEditable ? <CheckSharpIcon id="icon" onClick={handleEdit}></CheckSharpIcon> : <EditIcon id="icon" onClick={handleEdit}></EditIcon>}
         
-        <Delete onClick={handleRemove}></Delete>
+        <Delete id="icon" onClick={handleRemove}></Delete>
       </li>
     );
   
