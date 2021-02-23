@@ -3,7 +3,7 @@ const survey = (
   action
 ) => {
   switch (action.type) {
-    case "START_SURVEY":
+    case "START_QUESTIONNAIRE":
       const options = action.options;
       let pairs = [];
 
@@ -38,10 +38,17 @@ const survey = (
         ...state,
         currentChoice: action.currentChoice,
       };
-    case "FINISH_SURVEY":
+    case "FINISH_QUESTIONNAIRE":
       return {
         ...state,
         isSurveyFinished: true,
+      };
+    case "GO_TO_HOMEPAGE":
+      // figure out if we want to keep the previous data or not
+      return {
+        ...state,
+        isSurveyStarted: false,
+        isSurveyFinished: false,
       };
     default:
       return state;

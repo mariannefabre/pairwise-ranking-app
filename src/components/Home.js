@@ -10,7 +10,7 @@ const Home = () => {
   const dispatch = useDispatch();
 
   const startSurvey = () => {
-      dispatch({ type: "START_SURVEY", options });
+      dispatch({ type: "START_QUESTIONNAIRE", options });
     };
 
   return (
@@ -21,7 +21,7 @@ const Home = () => {
       <p className="homepage-step"> 2. Add options</p>
       <AddOptionTab />
       <OptionList />
-      <button className="start-button" onClick={startSurvey}>
+      <button className="button" onClick={startSurvey}>
         START
       </button>
     </div>

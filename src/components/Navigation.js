@@ -6,6 +6,9 @@ const Navigation = ({ currentChoice, choices, numberOfQuestions }) => {
   const dispatch = useDispatch();
 
   const handlePrevQuestion = () => {
+    if (currentChoice === 0) {
+      dispatch({ type: "GO_TO_HOMEPAGE" });
+    }
     dispatch({
       type: "PREVIOUS_QUESTION",
       currentChoice: currentChoice - 1,
@@ -23,7 +26,7 @@ const Navigation = ({ currentChoice, choices, numberOfQuestions }) => {
   return (
     <div className="navigation">
       <ArrowBackIosSharpIcon
-        className={currentChoice > 0 ? "" : "hidden"}
+        className={currentChoice >= 0 ? "" : "hidden"}
         onClick={handlePrevQuestion}
       />
       <p>

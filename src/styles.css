@@ -205,8 +205,8 @@ button:focus {
 .hidden {
   visibility: hidden;
 }
-.start-button {
-  margin: 30px 0;
+.button {
+  margin: 30px 20px;
   height: 42px;
   background: none;
   transition: 0.5s;
@@ -214,14 +214,14 @@ button:focus {
   border: 1px solid rgb(226, 223, 223);
   color: rgb(226, 223, 223);
 }
-.start-button:focus {
+.button:focus {
   outline: none;
 }
-.start-button:hover {
+.button:hover {
   border: none;
   color: #1c222d;
   font-size: 18px;
-  transform: scale(1.1);
+  transform: scale(1);
   background-color: rgb(226, 223, 223);
   transition: all 0.3s ease-in-out;
 }
@@ -230,7 +230,7 @@ button:focus {
   font-size: 1.3em;
 }
 .ranking-table {
-  margin: 0 auto;
+  margin: 50px auto;
 }
 .ranking-data {
   padding: 0.5rem 0.3em;

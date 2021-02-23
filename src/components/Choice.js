@@ -32,12 +32,12 @@ const Choice = () => {
     });
   };
 
-  const saveChoice = (selectedOption) =>
+/*   const saveChoice = (selectedOption) =>
     new Promise((resolve, reject) => {
       dispatchSaveChoice(selectedOption);
       resolve("It worked");
     });
-
+ */
   const handleChoice = (e) => {
     let selected;
     switch (e.target.innerHTML) {
@@ -50,19 +50,11 @@ const Choice = () => {
       default:
         break;
     }
+    dispatchSaveChoice(selected);
     if (pairs[currentChoice + 1]) {
-      dispatchSaveChoice(selected);
       dispatchNextQuestion();
     } else {
-      dispatch({ type: "FINISH_SURVEY" });
-      saveChoice(selected).then((resolvedValue) => {
-        /*     console.log(resolvedValue);
-        console.log(choices); */
-        dispatch({
-          type: "UPDATE_SCORES",
-          choices: choices,
-        });
-      });
+      dispatch({ type: "FINISH_QUESTIONNAIRE" });
     }
   };
 

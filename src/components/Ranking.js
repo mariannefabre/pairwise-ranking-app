@@ -9,7 +9,7 @@ const Ranking = () => {
   const choices = useSelector((state) => state.choices);
   const dispatch = useDispatch();
 
-  const optionsWithScores = options.map((x) => ({ ...x, score:0 }));
+  const optionsWithScores = options.map((x) => ({ ...x, score: 0 }));
 
   choices.forEach((choice) => {
     let chosenOption = optionsWithScores.find(
@@ -17,20 +17,24 @@ const Ranking = () => {
     );
     chosenOption.score++;
   });
-    
+
   // sort from highest to lowest score
   optionsWithScores.sort((a, b) => b.score - a.score);
   let rank = 0;
 
   const handleRetakeTest = () => {
     dispatch({
-      type: "START_SURVEY",
+      type: "START_QUESTIONNAIRE",
       options: options,
     });
     dispatch({
       type: "RETAKE_TEST",
     });
-    
+  };
+
+  const handleCreateNew = () => {
+    // add code to erase state
+    dispatch({ type: "GO_TO_HOMEPAGE" });
   };
 
   const renderedRanking = optionsWithScores.map((option) => {
@@ -57,7 +61,12 @@ const Ranking = () => {
       <table className="ranking-table">
         <tbody>{renderedRanking}</tbody>
       </table>
-      <button onClick={handleRetakeTest}>Retake the test</button>
+      <button className="button" onClick={handleRetakeTest}>
+        Retake Questionnaire
+      </button>
+      <button className="button" onClick={handleCreateNew}>
+        Create New Questionnaire
+      </button>
     </div>
   );
 };
