@@ -1,7 +1,7 @@
 #root {
   --main-bg-color: #ffffffee;
   --second-color: #358cd3;
-  --third-color: rgb(153, 153, 153);
+  --third-color: rgb(141, 140, 140);
   background-color: var(--main-bg-color);
 }
 html {
@@ -24,10 +24,9 @@ html {
 
 .container {
   min-height: 53px;
-  height: 13vh
+  height: 13vh;
 }
 @media only screen and (min-width: 1200px) {
-
 }
 .App,
 .home {
@@ -100,7 +99,8 @@ input:focus::placeholder {
 .button:active {
   box-shadow: 0 0 10px var(--second-color);
 }
-.button:hover, #tab-add-button:hover {
+.button:hover,
+#tab-add-button:hover {
   color: var(--second-color);
   background-color: var(--main-bg-color);
   transition: all 0.2s ease-in-out;
@@ -191,10 +191,12 @@ input:focus::placeholder {
   cursor: pointer;
   font-size: 35px;
 }
-#addCircleIcon:hover, #icon:hover {
+#addCircleIcon:hover,
+#icon:hover {
   transform: scale(1.1);
 }
-#addCircleIcon:active, #icon:hover:active {
+#addCircleIcon:active,
+#icon:hover:active {
   transform: scale(0.9);
 }
 .tab-enter-button {
@@ -223,7 +225,6 @@ input:focus::placeholder {
   width: 80vw;
   font-size: 20px;
 }
-
 
 .choice-option {
   width: 90%;
@@ -304,10 +305,9 @@ input:focus::placeholder {
   margin: 50px auto;
   font-size: 1rem;
   font-weight: 300;
+  width: 100%;
 }
 .ranking-data {
-  display: inline-flex;
-  text-align: center;
   padding: 0.5rem 0.3em;
 }
 
@@ -325,5 +325,5 @@ input:focus::placeholder {
 }
 #thumb-down {
   font-size: 1.2rem;
-  color: #d4d4d4;
+  color: var(--third-color);
 }

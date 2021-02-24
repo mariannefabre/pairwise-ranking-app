@@ -40,13 +40,13 @@ const Ranking = () => {
     rank++;
     return (
       <tr key={option.id}>
-        <td className="ranking-data">{rank}</td>
-        <td className="ranking-data">{option.text}</td>
-        <td className="ranking-data">
+        <td className="ranking-data td-rank">{rank}</td>
+        <td className="ranking-data td-option">{option.text}</td>
+        <td className="ranking-data td-score">
           {option.score}&nbsp;
           <ThumbUpIcon id="thumb-up"  />
         </td>
-        <td className="ranking-data">
+        <td className="ranking-data td-score">
           {options.length - 1 - option.score}&nbsp;
           <ThumbDownIcon id="thumb-down" />
         </td>
