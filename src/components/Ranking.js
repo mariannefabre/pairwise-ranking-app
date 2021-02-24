@@ -36,7 +36,7 @@ const Ranking = () => {
     dispatch({ type: "CREATE_NEW_QUESTIONNAIRE" });
   };
 
-  const renderedRanking = optionsWithScores.map((option) => {
+  const renderedRanking = optionsWithScores.map((option, index) => {
     rank++;
     return (
       <tr key={option.id}>
@@ -58,13 +58,13 @@ const Ranking = () => {
     <div className="ranking">
       <h2>{topic}</h2>
       <table className="ranking-table">
-        <tbody>{renderedRanking}</tbody>
+        <tbody>{renderedRanking}</tbody>     
       </table>
       <button className="button" onClick={handleRetakeTest}>
         Retake Questionnaire
       </button>
       <button className="button" onClick={handleCreateNew}>
-        Create New Questionnaire
+        New Questionnaire
       </button>
     </div>
   );

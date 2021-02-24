@@ -1,7 +1,7 @@
 #root {
   --main-bg-color: #ffffffee;
-  --second-color: #6e44ff;
-  --third-color: #ffffffee;
+  --second-color: #358cd3;
+  --third-color: rgb(153, 153, 153);
   background-color: var(--main-bg-color);
 }
 html {
@@ -24,7 +24,7 @@ html {
 
 .container {
   min-height: 53px;
-  height:17vh
+  height: 13vh
 }
 @media only screen and (min-width: 1200px) {
 
@@ -40,33 +40,32 @@ html {
 }
 
 h1 {
-  background-color: #f1f0f0;
   padding: 10px 0;
   width: 100%;
   margin: 0 auto;
-  font-size: 1.4em;
+  font-size: 1.3em;
   position: absolute;
   top: 0px;
-  color: #5f5f5f;
+  color: var(--third-color);
   font-weight: 300;
+  box-shadow: 0px 2px 8px 0px rgb(50 50 50 / 8%);
 }
 
 h2 {
   margin-bottom: 4vh;
-  color: #5f5f5f;
+  color: var(--third-color);
   font-weight: 300;
   font-size: 1.3rem;
 }
 
 input {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   height: 45px;
   border: none;
   text-indent: 2px;
   color: var(--second-color);
   border-radius: 5px;
   border: 2px solid transparent;
-  background-color: var(--third-color);
   transition: all 0.1s;
 }
 @media only screen and (min-width: 500px) {
@@ -91,9 +90,9 @@ input:focus::placeholder {
   background: var(--second-color);
   font-family: "Lato", sans-serif;
   border: 1.5px solid transparent;
-  color: var(--third-color);
   font-weight: 550;
   border-radius: 5px;
+  color: var(--main-bg-color);
 }
 .button:focus {
   outline: none;
@@ -103,7 +102,7 @@ input:focus::placeholder {
 }
 .button:hover, #tab-add-button:hover {
   color: var(--second-color);
-  background-color: var(--third-color);
+  background-color: var(--main-bg-color);
   transition: all 0.2s ease-in-out;
   border: 1.5px solid var(--second-color);
 }
@@ -114,7 +113,7 @@ input:focus::placeholder {
   border-radius: 5px;
   margin: 8px;
   padding: 4px 10px;
-  box-shadow: 0 0 7px rgb(179, 179, 179);
+  box-shadow: 2px 2px 5px 1px rgb(50 50 50 / 12%);
 }
 
 .option,
@@ -126,6 +125,7 @@ input:focus::placeholder {
   border: unset;
   text-indent: 0;
   color: #5f5f5f;
+  font-weight: 300;
   font-size: 0.9em;
   height: auto;
 }
@@ -170,7 +170,11 @@ input:focus::placeholder {
   width: 90%;
   margin-right: 5px;
   margin-left: 25px;
-  border: 1.5px solid rgb(179, 179, 179);
+  border: 1.8px solid rgb(211, 211, 211);
+  transition: all 0.1s;
+}
+.tab input:hover {
+  box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
   transition: all 0.1s;
 }
 .tab input:focus {
@@ -220,6 +224,7 @@ input:focus::placeholder {
   font-size: 20px;
 }
 
+
 .choice-option {
   width: 90%;
   max-width: 500px;
@@ -236,6 +241,24 @@ input:focus::placeholder {
 }
 #second-option {
   animation: slideInFromRight 0.3s 1;
+}
+.choice-option:active,
+.choice-option-selected {
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px 0;
+  border: solid 1px var(--second-color);
+  background-color: var(--second-color);
+  color: var(--main-bg-color);
+  font-size: 1rem;
+}
+
+.choice-option:hover {
+  border: solid 1px var(--second-color);
+  color: var(--main-bg-color);
+  background-color: var(--second-color);
+  transition: all 0.2s ease-in-out;
 }
 
 @keyframes slideInFromLeft {
@@ -254,24 +277,6 @@ input:focus::placeholder {
     transform: translate(0, 0);
   }
 }
-.choice-option:active,
-.choice-option-selected {
-  width: 90%;
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px 0;
-  border: none;
-  background-color: var(--second-color);
-  color: var(--third-color);
-  font-size: 20px;
-}
-
-.choice-option:hover {
-  border: none;
-  color: var(--third-color);
-  background-color: var(--second-color);
-  transition: all 0.4s ease-in-out;
-}
 
 .navigation {
   width: 90%;
@@ -281,29 +286,28 @@ input:focus::placeholder {
   font-size: 18px;
 }
 #nav-icon {
-  font-size: 50px;
+  font-size: 2.8rem;
 }
 .hidden {
   visibility: hidden;
 }
 
 .ranking {
-  background-color: var(--third-color);
   font-size: 1.3em;
   border-radius: 5px;
-  border: 0.5px solid #cfcdcdd7;
+  box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
   padding: 15px;
   margin: 15px;
 }
 .ranking-table {
-  color: #5f5f5f;
+  color: #707070;
   margin: 50px auto;
   font-size: 1rem;
- 
+  font-weight: 300;
 }
 .ranking-data {
   display: inline-flex;
-  align-items: center;
+  text-align: center;
   padding: 0.5rem 0.3em;
 }
 
@@ -317,9 +321,9 @@ input:focus::placeholder {
 }
 #thumb-up {
   font-size: 1.2rem;
-  color: #b688ff;
+  color: var(--second-color);
 }
 #thumb-down {
   font-size: 1.2rem;
-  color: #e7e6e6;
+  color: #d4d4d4;
 }
