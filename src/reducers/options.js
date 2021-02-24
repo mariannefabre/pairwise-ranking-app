@@ -1,7 +1,7 @@
 const initialState = [
-  { id: 0, text: "Salary"},
-  { id: 1, text: "Great colleagues"},
-  { id: 2, text: "Work-life-balance"},
+  { id: 0, text: "Salary" },
+  { id: 1, text: "Great colleagues" },
+  { id: 2, text: "Work-life-balance" },
 ];
 function nextOptionsId(options) {
   const maxId = options.reduce(
@@ -14,22 +14,20 @@ function nextOptionsId(options) {
 const options = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_OPTION":
-      return [
-        ...state,
-        { id: nextOptionsId(state), text: action.name},
-      ];
+      return [...state, { id: nextOptionsId(state), text: action.name }];
 
     case "REMOVE_OPTION":
       return state.filter((option) => action.id !== option.id);
 
     case "EDIT_OPTION":
-      return state.map((item, id) => {
-        if (id !== action.id) {
-          return item;
+      return state.map((option) => {
+        if (option.id !== action.id) {
+          return option;
+        } else {
+          return { ...option, text: action.name };
         }
-        return { ...item, text: action.name};
       });
-      case "CREATE_NEW_QUESTIONNAIRE":
+    case "CREATE_NEW_QUESTIONNAIRE":
       return [];
     default:
       return state;

@@ -31,7 +31,7 @@ const AddTopicTab = () => {
           handleClick(input.value);
           input.value = "";
         }}
-      >ok</button>
+      >OK</button>
     </div>
   );
 };

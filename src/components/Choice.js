@@ -34,7 +34,7 @@ const Choice = () => {
   
   const handleChoice = (e) => {
     let selected;
-    switch (e.target.innerHTML) {
+    switch (e.target.innerText) {
       case firstOption:
         selected = firstOptionId;
         break;

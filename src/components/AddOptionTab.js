@@ -29,7 +29,7 @@ const AddOptionTab = () => {
         onKeyPress={keyPressed}
       />
       <AddCircleIcon
-      id="tab-add-button"
+      id= "addCircleIcon"
         onClick={() => {
           handleClick(input.value);
           input.value = "";

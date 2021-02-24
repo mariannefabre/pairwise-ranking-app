@@ -43,12 +43,12 @@ const Ranking = () => {
         <td className="ranking-data">{rank}</td>
         <td className="ranking-data">{option.text}</td>
         <td className="ranking-data">
-          {option.score}{" "}
-          <ThumbUpIcon className="thumb-up"  />
+          {option.score}&nbsp;
+          <ThumbUpIcon id="thumb-up"  />
         </td>
         <td className="ranking-data">
-          {options.length - 1 - option.score}{" "}
-          <ThumbDownIcon className="thumb-down" />
+          {options.length - 1 - option.score}&nbsp;
+          <ThumbDownIcon id="thumb-down" />
         </td>
       </tr>
     );
