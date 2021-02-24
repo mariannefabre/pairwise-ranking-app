@@ -26,7 +26,7 @@ const AddTopicTab = () => {
         onKeyPress={keyPressed}
       />
       <button
-      className="button tab-enter-button"
+      className="button tab-enter-button second-button"
         onClick={() => {
           handleClick(input.value);
           input.value = "";

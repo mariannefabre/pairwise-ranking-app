@@ -2,6 +2,7 @@
   --main-bg-color: #ffffffee;
   --second-color: #358cd3;
   --third-color: rgb(141, 140, 140);
+  --fourth-color: rgba(110, 163, 39, 0.89);
   background-color: var(--main-bg-color);
 }
 html {
@@ -86,25 +87,45 @@ input:focus::placeholder {
   font-size: 18px;
   margin: 20px;
   height: 45px;
-  background: var(--second-color);
   font-family: "Lato", sans-serif;
   border: 1.5px solid transparent;
   font-weight: 550;
   border-radius: 5px;
-  color: var(--main-bg-color);
 }
 .button:focus {
   outline: none;
 }
-.button:active {
+.main-button {
+  background: var(--fourth-color);
+  color: var(--main-bg-color);
+}
+.main-button:active {
+  box-shadow: 0 0 10px var(--fourth-color);
+}
+.main-button:hover {
+  color: var(--fourth-color);
+  background: var(--main-bg-color);
+  transition: all 0.2s ease-in-out;
+  border: 1.5px solid var(--fourth-color);
+}
+.second-button {
+  background: var(--second-color);
+  color: var(--main-bg-color);
+}
+.second-button:active {
   box-shadow: 0 0 10px var(--second-color);
 }
-.button:hover,
-#tab-add-button:hover {
+.second-button:hover {
   color: var(--second-color);
   background-color: var(--main-bg-color);
   transition: all 0.2s ease-in-out;
   border: 1.5px solid var(--second-color);
+}
+.tab-enter-button {
+  margin: 0 5px;
+  padding: 0 8px;
+  height: 35px;
+  font-size: 14px;
 }
 
 .list-item {
@@ -199,12 +220,7 @@ input:focus::placeholder {
 #icon:hover:active {
   transform: scale(0.9);
 }
-.tab-enter-button {
-  margin: 0 5px;
-  padding: 0 8px;
-  height: 35px;
-  font-size: 12px;
-}
+
 @media only screen and (min-width: 550px) {
   #addCircleIcon,
   .tab-enter-button {

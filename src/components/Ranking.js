@@ -44,7 +44,7 @@ const Ranking = () => {
         <td className="ranking-data">{option.text}</td>
         <td className="ranking-data">
           {option.score}&nbsp;
-          <ThumbUpIcon id="thumb-up"  />
+          <ThumbUpIcon id="thumb-up" />
         </td>
         <td className="ranking-data">
           {options.length - 1 - option.score}&nbsp;
@@ -58,12 +58,12 @@ const Ranking = () => {
     <div className="ranking">
       <h2>{topic}</h2>
       <table className="ranking-table">
-        <tbody>{renderedRanking}</tbody>     
+        <tbody>{renderedRanking}</tbody>
       </table>
-      <button className="button" onClick={handleRetakeTest}>
+      <button className="button second-button" onClick={handleRetakeTest}>
         Retake Questionnaire
       </button>
-      <button className="button" onClick={handleCreateNew}>
+      <button className="button main-button" onClick={handleCreateNew}>
         New Questionnaire
       </button>
     </div>

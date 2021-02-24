@@ -22,7 +22,7 @@ const Home = () => {
       <p className="homepage-step"> 2. Add options</p>
       <AddOptionTab />
       <OptionList />
-      <button className="button" onClick={startSurvey}>
+      <button className="main-button button" onClick={startSurvey}>
         START
       </button>
     </div>
