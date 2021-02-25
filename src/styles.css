@@ -1,8 +1,9 @@
 #root {
   --main-bg-color: #ffffffee;
   --second-color: #358cd3;
-  --third-color: rgb(141, 140, 140);
-  --fourth-color: rgba(101, 160, 23, 0.89);
+  --third-color: rgba(101, 160, 23, 0.89);
+  --text-color: #5f5f5f;
+  --outline-color: rgb(141, 140, 140);
   background-color: var(--main-bg-color);
 }
 html {
@@ -15,75 +16,117 @@ html {
   }
 }
 
+/* GENERAL */
+
 .App {
   min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  overflow-x: hidden;
 }
 
 .container {
   min-height: 53px;
   height: 13vh;
 }
-@media only screen and (min-width: 1200px) {
-}
-.App,
-.home {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: var(--second-color);
-  overflow-x: hidden;
-}
 
 h1 {
-  padding: 10px 0;
+  color: var(--outline-color);
+  padding: 15px 0;
   width: 100%;
   margin: 0 auto;
   font-size: 1.1em;
   position: absolute;
   top: 0px;
-  color: var(--third-color);
   font-weight: 300;
   box-shadow: 0px 2px 8px 0px rgb(50 50 50 / 8%);
 }
 
 h2 {
   margin-bottom: 4vh;
-  color: var(--third-color);
   font-weight: 300;
   font-size: 1.2rem;
+  color: var(--outline-color);
+}
+
+/* FORM VIEW */
+
+.field-container {
+  padding-bottom: 3vh;
+}
+
+.form-label {
+  font-size: 1.3em;
+  color: var(--second-color);
+}
+
+.form-tab {
+  display: flex;
+  width: 85vw;
+  margin: 20px auto;
+  align-items: center;
+}
+
+@media only screen and (min-width: 500px) {
+  .form-tab {
+    width: 75vw;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .form-tab {
+    width: 550px;
+  }
 }
 
 input {
   font-size: 0.8rem;
   height: 45px;
   border: none;
-  text-indent: 2px;
-  color: var(--second-color);
   border-radius: 5px;
-  border: 2px solid transparent;
   transition: all 0.1s;
+  color: var(--text-color);
 }
-@media only screen and (min-width: 500px) {
-  input {
-    text-indent: 10px;
-  }
+input::placeholder {
+  color: var(--outline-color);
 }
+
 input:focus {
-  border: 2px solid var(--second-color);
+  border: 1.5px solid var(--second-color);
+  outline: none;
   color: var(--second-color);
 }
+
 input:focus::placeholder {
   color: transparent;
 }
+
+.form-input {
+  text-indent: 5px;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  border: 1.5px solid rgb(211, 211, 211);
+  transition: all 0.1s;
+}
+.form-input:hover {
+  box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
+  transition: all 0.1s;
+}
+.form-input:focus {
+  box-shadow: 0 0 5px var(--second-color);
+}
+
+/* BUTTONS */
 
 .button {
   cursor: pointer;
   padding: 0 15px;
   font-size: 0.8rem;
-  margin: 20px;
+  margin: 15px;
   height: 40px;
-  font-family: "Lato", sans-serif;
   border: 1.5px solid transparent;
   font-weight: 550;
   border-radius: 5px;
@@ -92,17 +135,17 @@ input:focus::placeholder {
   outline: none;
 }
 .main-button {
-  background: var(--fourth-color);
+  background: var(--third-color);
   color: var(--main-bg-color);
 }
 .main-button:active {
-  box-shadow: 0 0 10px var(--fourth-color);
+  box-shadow: 0 0 10px var(--third-color);
 }
 .main-button:hover {
-  color: var(--fourth-color);
+  color: var(--third-color);
   background: var(--main-bg-color);
   transition: all 0.2s ease-in-out;
-  border: 1.5px solid var(--fourth-color);
+  border: 1.5px solid var(--third-color);
 }
 .second-button {
   background: var(--second-color);
@@ -117,11 +160,25 @@ input:focus::placeholder {
   transition: all 0.2s ease-in-out;
   border: 1.5px solid var(--second-color);
 }
-.tab-enter-button {
-  margin: 0 5px;
-  padding: 0 8px;
-  height: 35px;
-  font-size: 14px;
+
+/* OPTIONS LIST */
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  width: 80vw;
+  margin: 30px auto;
+}
+
+@media only screen and (min-width: 500px) {
+  .options-list {
+    width: 70vw;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .options-list {
+    width: 520px;
+  }
 }
 
 .list-item {
@@ -141,130 +198,64 @@ input:focus::placeholder {
   text-align: center;
   border: unset;
   text-indent: 0;
-  color: #5f5f5f;
   font-weight: 300;
   font-size: 0.9em;
   height: auto;
+  border: 1.5px solid transparent;
 }
 .option-edit {
   color: var(--second-color);
-  outline: none;
-  box-shadow: 0 0 10px var(--second-color);
+  border: 1.5px solid var(--second-color);
 }
 
-.option-list {
-  list-style: none;
-  padding: 0;
-  width: 80vw;
-}
+/* ICONS */
 
-.tab {
-  display: flex;
-  justify-content: center;
-  width: 90vw;
-  margin: 10px auto;
-  align-items: center;
-}
-
-@media only screen and (min-width: 500px) {
-  .tab {
-    width: 85vw;
-  }
-  .option-list {
-    width: 70vw;
-  }
-}
-@media only screen and (min-width: 700px) {
-  .tab {
-    width: 600px;
-  }
-  .option-list {
-    width: 540px;
-  }
-}
-
-.tab input {
-  width: 90%;
-  margin-right: 5px;
-  margin-left: 25px;
-  border: 1.8px solid rgb(211, 211, 211);
-  transition: all 0.1s;
-}
-.tab input:hover {
-  box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
-  transition: all 0.1s;
-}
-.tab input:focus {
-  box-shadow: 0 0 8px var(--second-color);
-  outline: none;
-}
 #icon {
   font-size: 28px;
   margin: 0 3px;
   cursor: pointer;
+  color: var(--second-color);
 }
-
-#addCircleIcon {
+#addIcon {
   cursor: pointer;
+  margin-left: 2px;
   font-size: 35px;
+  color: var(--second-color);
 }
-#addCircleIcon:hover,
+#addIcon:hover,
 #icon:hover {
   transform: scale(1.1);
 }
-#addCircleIcon:active,
+#addIcon:active,
 #icon:hover:active {
   transform: scale(0.9);
 }
 
-@media only screen and (min-width: 550px) {
-  #addCircleIcon,
-  .tab-enter-button {
-    display: none;
-  }
-
-  .tab input {
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-
-.homepage-step {
-  font-size: 1.3em;
-}
+/* CHOICE VIEW */
 
 .choice {
   width: 80vw;
   font-size: 20px;
-}
-
-.choice-option {
-  width: 90%;
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px 0;
-  background-color: transparent;
-  font-size: 1rem;
-  border: solid 1px var(--second-color);
   color: var(--second-color);
 }
 
-#first-option {
-  animation: slideInFromLeft 0.3s 1;
-}
-#second-option {
-  animation: slideInFromRight 0.3s 1;
-}
+.choice-option,
 .choice-option:active,
 .choice-option-selected {
   width: 90%;
   max-width: 500px;
   margin: 40px auto;
   padding: 20px 0;
-  border: solid 1px var(--second-color);
+  font-size: 1rem;
+  border: solid 1.5px var(--second-color);
+  background-color: transparent;
+  color: var(--second-color);
+}
+
+.choice-option:active,
+.choice-option-selected {
   background-color: var(--second-color);
   color: var(--main-bg-color);
-  font-size: 1rem;
 }
 
 .choice-option:hover {
@@ -274,6 +265,12 @@ input:focus::placeholder {
   transition: all 0.2s ease-in-out;
 }
 
+#first-option {
+  animation: slideInFromLeft 0.3s 1;
+}
+#second-option {
+  animation: slideInFromRight 0.3s 1;
+}
 @keyframes slideInFromLeft {
   0% {
     transform: translate(-50vw, 0);
@@ -298,6 +295,10 @@ input:focus::placeholder {
   margin: 20px 0;
   font-size: 18px;
 }
+.navigation p {
+  color: var(--outline-color);
+}
+
 #nav-icon {
   font-size: 2.8rem;
 }
@@ -305,15 +306,17 @@ input:focus::placeholder {
   visibility: hidden;
 }
 
-.ranking {
+/* RANKING VIEW */
+
+.ranking-container {
   font-size: 1.3em;
   border-radius: 5px;
   box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
   padding: 15px;
   margin: 15px;
+  min-width: 65%;
 }
 .ranking-table {
-  color: #707070;
   margin: 40px auto;
   font-size: 1rem;
   font-weight: 300;
@@ -324,27 +327,29 @@ input:focus::placeholder {
 }
 
 @media only screen and (min-width: 658px) {
-  .ranking {
+  .ranking-container {
+    min-width: 25%;
     padding: 35px;
   }
   .ranking-data {
     padding: 0.8rem 0.9em;
   }
 }
+
 #thumb-up {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--second-color);
 }
 #thumb-down {
-  font-size: 1.2rem;
-  color: var(--third-color);
+  font-size: 1.1rem;
+  color: var(--outline-color);
 }
-.display-column{
+.flex-column {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.replay-button{
-  font-size: 1.8rem !important;
+.replay-button {
+  font-size: 2rem !important;
   padding-bottom: 10px;
 }

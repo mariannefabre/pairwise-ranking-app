@@ -1,7 +1,7 @@
 import "../styles.css";
 import { useDispatch} from "react-redux";
 import { useState } from "react";
-import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import Delete from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import CheckSharpIcon from '@material-ui/icons/CheckSharp';
 
@@ -41,7 +41,7 @@ const Option = ({ option }) => {
         )}
         {isEditable ? <CheckSharpIcon id="icon" onClick={handleEdit}></CheckSharpIcon> : <EditIcon id="icon" onClick={handleEdit}></EditIcon>}
         
-        <DeleteOutlineIcon id="icon" onClick={handleRemove}/>
+        <Delete id="icon" onClick={handleRemove}/>
       </li>
     );
   

@@ -56,12 +56,12 @@ const Ranking = () => {
   });
 
   return (
-    <div className="ranking">
+    <div className="ranking-container">
       <h2>{topic}</h2>
       <table className="ranking-table">
         <tbody>{renderedRanking}</tbody>
       </table>
-      <div className="display-column">
+      <div className="flex-column">
       <ReplayIcon id="icon" className="replay-button" onClick={handleRetakeTest}/>
       <button className="button main-button" onClick={handleCreateNew}>
         New Questionnaire
