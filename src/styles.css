@@ -2,7 +2,7 @@
   --main-bg-color: #ffffffee;
   --second-color: #358cd3;
   --third-color: rgb(141, 140, 140);
-  --fourth-color: rgba(110, 163, 39, 0.89);
+  --fourth-color: rgba(101, 160, 23, 0.89);
   background-color: var(--main-bg-color);
 }
 html {
@@ -14,11 +14,7 @@ html {
     font-size: 20px;
   }
 }
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 22px;
-  }
-}
+
 .App {
   min-height: 100vh;
 }
@@ -43,7 +39,7 @@ h1 {
   padding: 10px 0;
   width: 100%;
   margin: 0 auto;
-  font-size: 1.3em;
+  font-size: 1.1em;
   position: absolute;
   top: 0px;
   color: var(--third-color);
@@ -55,7 +51,7 @@ h2 {
   margin-bottom: 4vh;
   color: var(--third-color);
   font-weight: 300;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 input {
@@ -84,9 +80,9 @@ input:focus::placeholder {
 .button {
   cursor: pointer;
   padding: 0 15px;
-  font-size: 18px;
+  font-size: 0.8rem;
   margin: 20px;
-  height: 45px;
+  height: 40px;
   font-family: "Lato", sans-serif;
   border: 1.5px solid transparent;
   font-weight: 550;
@@ -234,7 +230,7 @@ input:focus::placeholder {
 }
 
 .homepage-step {
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .choice {
@@ -318,7 +314,7 @@ input:focus::placeholder {
 }
 .ranking-table {
   color: #707070;
-  margin: 50px auto;
+  margin: 40px auto;
   font-size: 1rem;
   font-weight: 300;
   width: 100%;
@@ -342,4 +338,13 @@ input:focus::placeholder {
 #thumb-down {
   font-size: 1.2rem;
   color: var(--third-color);
+}
+.display-column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.replay-button{
+  font-size: 1.8rem !important;
+  padding-bottom: 10px;
 }

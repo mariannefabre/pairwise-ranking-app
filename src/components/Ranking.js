@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "../styles.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
+import ReplayIcon from '@material-ui/icons/Replay';
 
 const Ranking = () => {
   const topic = useSelector((state) => state.topic);
@@ -60,12 +61,13 @@ const Ranking = () => {
       <table className="ranking-table">
         <tbody>{renderedRanking}</tbody>
       </table>
-      <button className="button second-button" onClick={handleRetakeTest}>
-        Retake Questionnaire
-      </button>
+      <div className="display-column">
+      <ReplayIcon id="icon" className="replay-button" onClick={handleRetakeTest}/>
       <button className="button main-button" onClick={handleCreateNew}>
         New Questionnaire
       </button>
+      </div>
+
     </div>
   );
 };
