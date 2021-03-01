@@ -17,12 +17,11 @@ const Form = () => {
   }, [topicInput]);
 
   const startSurvey = (e) => {
+    e.preventDefault();
     if (options.length > 1 && topicInput.value.trim()) {
       dispatch({ type: "ADD_TOPIC", topic: topicInput.value });
       dispatch({ type: "START_QUESTIONNAIRE", options });
       console.log();
-    } else {
-      e.preventDefault();
     }
   };
   const handleClick = (value) => {
@@ -74,12 +73,12 @@ const Form = () => {
             }}
           />
         </div>
-        </div>
-        <OptionList />
-      
+      </div>
+      <OptionList />
+
       <button type="submit" id="start-button" className="main-button button">
-          START
-        </button>
+        START
+      </button>
     </form>
   );
 };
