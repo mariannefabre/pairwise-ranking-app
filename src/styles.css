@@ -29,7 +29,7 @@ html {
 }
 
 .container {
-  min-height: 53px;
+  min-height: 60px;
   height: 13vh;
 }
 
@@ -52,10 +52,49 @@ h2 {
   color: var(--outline-color);
 }
 
+/* INTRODUCTION */
+
+.introduction {
+  width: 85vw;
+  font-size: 0.8rem;
+  margin: 80px auto;
+  padding-top: 20px;
+}
+.introduction p {
+  text-align: justify;
+}
+
+@media only screen and (min-width: 500px) {
+  .introduction {
+    width: 85vw;
+  }
+}
+@media only screen and (min-width: 700px) {
+  .introduction {
+    width: 70vw;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .introduction {
+    width: 56vw;
+  }
+}
+
 /* FORM VIEW */
 
+.form {
+  box-shadow: 2px 2px 8px 4px rgb(50 50 50 / 8%);
+  padding: 40px 25px;
+  margin: 40px auto;
+}
+
+@media only screen and (min-width: 900px) {
+  .form {
+    max-width: 750px;
+  }
+}
 .field-container {
-  padding-bottom: 3vh;
+  padding: 1.5vh 0;
 }
 
 .form-label {
@@ -187,7 +226,7 @@ input:focus::placeholder {
   border-radius: 5px;
   margin: 8px;
   padding: 4px 10px;
-  box-shadow: 2px 2px 5px 1px rgb(50 50 50 / 12%);
+  box-shadow: 2px 2px 5px 4px rgb(50 50 50 / 12%);
 }
 
 .option,
@@ -328,11 +367,16 @@ input:focus::placeholder {
 
 @media only screen and (min-width: 658px) {
   .ranking-container {
-    min-width: 25%;
     padding: 35px;
   }
   .ranking-data {
     padding: 0.8rem 0.9em;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  .ranking-container {
+    width: 750px;
+    min-width: unset;
   }
 }
 
@@ -350,6 +394,6 @@ input:focus::placeholder {
   align-items: center;
 }
 .replay-button {
-  font-size: 2rem !important;
+  font-size: 2.2rem !important;
   padding-bottom: 10px;
 }

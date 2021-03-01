@@ -65,6 +65,7 @@ const Choice = () => {
   if (currentChoice < pairs.length)
     return (
       <div className="choice">
+        <div className="container"/>
         <h2>{topic}</h2>
         <button
           id="first-option"

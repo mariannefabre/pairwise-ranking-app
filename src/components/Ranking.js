@@ -56,7 +56,9 @@ const Ranking = () => {
   });
 
   return (
-    <div className="ranking-container">
+    <div>
+      <div className="container"/>
+      <div className="ranking-container">
       <h2>{topic}</h2>
       <table className="ranking-table">
         <tbody>{renderedRanking}</tbody>
@@ -67,7 +69,7 @@ const Ranking = () => {
         New Questionnaire
       </button>
       </div>
-
+    </div>
     </div>
   );
 };
