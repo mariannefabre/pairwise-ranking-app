@@ -8,7 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 
 import throttle from "lodash/throttle";
-import { saveState, } from "./util/localStorage";
+import { saveState, } from "./util/sessionStorage";
 
 store.subscribe(
   throttle(() => {

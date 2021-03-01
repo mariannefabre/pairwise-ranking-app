@@ -1,8 +1,4 @@
-const initialState = [
-  { id: 0, text: "Salary" },
-  { id: 1, text: "Great colleagues" },
-  { id: 2, text: "Work-life-balance" },
-];
+const initialState = [];
 function nextOptionsId(options) {
   const maxId = options.reduce(
     (maxId, option) => Math.max(option.id, maxId),
