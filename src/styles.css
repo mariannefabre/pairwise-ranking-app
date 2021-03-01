@@ -354,7 +354,7 @@ input:focus::placeholder {
   box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
   padding: 30px;
   margin: 15px;
-  min-width: 65%;
+  min-width: 65vw;
 }
 .ranking-table {
   margin: 40px auto;
