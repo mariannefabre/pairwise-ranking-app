@@ -84,13 +84,14 @@ h2 {
 
 .form {
   box-shadow: 2px 2px 8px 4px rgb(50 50 50 / 8%);
-  padding: 40px 25px;
+  padding: 40px 15px;
   margin: 40px auto;
 }
 
 @media only screen and (min-width: 900px) {
   .form {
     max-width: 750px;
+    padding: 40px 25px;
   }
 }
 .field-container {
@@ -351,7 +352,7 @@ input:focus::placeholder {
   font-size: 1.3em;
   border-radius: 5px;
   box-shadow: 2px 2px 8px 2px rgb(50 50 50 / 8%);
-  padding: 15px;
+  padding: 30px;
   margin: 15px;
   min-width: 65%;
 }
