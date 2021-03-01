@@ -14,7 +14,7 @@ const Form = () => {
 
   useEffect(() => {
     topicInput.value = topic;
-  }, [topicInput]);
+  }, []);
 
   const startSurvey = (e) => {
     e.preventDefault();
