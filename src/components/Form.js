@@ -78,7 +78,7 @@ const Form = () => {
       </div>
       <OptionList />
       <Link to="/questionnaire" onClick={startSurvey}>
-        <button type="submit" id="start-button" className="main-button button">
+        <button type="submit" id="start-button" className="button">
           Start
         </button>
       </Link>

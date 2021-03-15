@@ -51,7 +51,7 @@ const Home = () => {
         </Link>
       </button> */}
       <Link to="/form">
-        <button className="button home-button" onClick={handleCreateNew}>
+        <button className="button" onClick={handleCreateNew}>
           Try it out!
         </button>
       </Link>

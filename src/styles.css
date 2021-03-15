@@ -205,42 +205,16 @@ input:focus::placeholder {
 .button:focus {
   outline: none;
 }
-.main-button {
-  background: var(--second-color);
-  color: var(--main-bg-color);
-}
-.main-button:active {
-  box-shadow: 0 0 10px var(--second-color);
-}
-.main-button:hover {
-  color: var(--second-color);
-  background: var(--main-bg-color);
-  transition: all 0.2s ease-in-out;
-  border: 1.5px solid var(--second-color);
-}
-.second-button {
-  background: var(--second-color);
-  color: var(--main-bg-color);
-}
-.second-button:active {
-  box-shadow: 0 0 10px var(--second-color);
-}
-.second-button:hover {
-  color: var(--second-color);
-  background-color: var(--main-bg-color);
-  transition: all 0.2s ease-in-out;
-  border: 1.5px solid var(--second-color);
-}
-.home-button {
+.button {
   background: rgb(219, 201, 62);
-  color: rgb(41, 41, 41);
+  color: rgb(255, 254, 254);
   font-weight: 700;
 }
 
-.home-button:active {
+.button:active {
   box-shadow: 0 0 10px rgb(219, 201, 62);
 }
-.home-button:hover {
+.button:hover {
   color: rgb(219, 201, 62);
   background-color: var(--main-bg-color);
   transition: all 0.2s ease-in-out;

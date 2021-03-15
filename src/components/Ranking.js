@@ -2,8 +2,8 @@ import { useSelector, useDispatch } from "react-redux";
 import "../styles.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import ReplayIcon from '@material-ui/icons/Replay';
-import {Link} from "react-router-dom";
+import ReplayIcon from "@material-ui/icons/Replay";
+import { Link } from "react-router-dom";
 
 const Ranking = () => {
   const topic = useSelector((state) => state.topic);
@@ -58,19 +58,25 @@ const Ranking = () => {
 
   return (
     <div>
-      <div className="container"/>
+      <div className="container" />
       <div className="ranking-container">
-      <h2>{topic}</h2>
-      <table className="ranking-table">
-        <tbody>{renderedRanking}</tbody>
-      </table>
-      <div className="flex-column">
-      <ReplayIcon id="icon" className="replay-button" onClick={handleRetakeTest}/>
-      <Link to="/form"><button className="button main-button" onClick={handleCreateNew}>
-        New Questionnaire
-      </button></Link>
+        <h2>{topic}</h2>
+        <table className="ranking-table">
+          <tbody>{renderedRanking}</tbody>
+        </table>
+        <div className="flex-column">
+          <ReplayIcon
+            id="icon"
+            className="replay-button"
+            onClick={handleRetakeTest}
+          />
+          <Link to="/form">
+            <button className="button" onClick={handleCreateNew}>
+              New Questionnaire
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
