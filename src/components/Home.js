@@ -12,6 +12,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <img className="home-image"src="../libra.svg" alt="scale" />
       <h2 className="title">What is Pairwise Comparison?</h2>
       <div className="separator" />
       <h3>A decision making tool</h3>

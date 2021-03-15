@@ -66,7 +66,7 @@ a:active {
   text-decoration: inherit;
   font-weight: inherit;
 }
-/* INTRODUCTION */
+/* HOME PAGE */
 
 .home {
   text-align: center;
@@ -74,6 +74,10 @@ a:active {
   font-size: 1rem;
   margin: 5vh 24px;
   display: block;
+}
+.home-image{
+  width: 100px;
+  
 }
 .title {
   text-align: left;
