@@ -1,17 +1,14 @@
 import { useDispatch } from "react-redux";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
 
-
   const handleCreateNew = () => {
     dispatch({ type: "CREATE_NEW_QUESTIONNAIRE" });
-
   };
 
-  const handleSeeExample = () => {
-  };
+  const handleSeeExample = () => {};
 
   return (
     <div className="home">
@@ -47,16 +44,16 @@ const Home = () => {
         skills, experience and teamworking ability when hiring people for a new
         role.
       </p>
-{/*       <button className="button home-button" onClick={handleSeeExample}>
+      {/*       <button className="button home-button" onClick={handleSeeExample}>
         <Link to="/form">
         See example
         </Link>
       </button> */}
-      <button className="button home-button" onClick={handleCreateNew}>
       <Link to="/form">
-        Start
-        </Link>
-      </button>
+        <button className="button home-button" onClick={handleCreateNew}>
+          Try it out!
+        </button>
+      </Link>
     </div>
   );
 };
