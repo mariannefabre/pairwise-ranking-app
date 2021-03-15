@@ -49,12 +49,6 @@ const survey = (
         ...state,
         isSurveyFinished: true,
       };
-    case "GO_TO_HOMEPAGE":
-      return {
-        ...state,
-        isSurveyStarted: false,
-        isSurveyFinished: false,
-      };
     case "CREATE_NEW_QUESTIONNAIRE":
       return {
         ...state,

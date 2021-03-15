@@ -1,13 +1,15 @@
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const Navigation = ({ currentChoice, choices, numberOfQuestions }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handlePrevQuestion = () => {
     if (currentChoice === 0) {
-      dispatch({ type: "GO_TO_HOMEPAGE" });
+      history.push("/form");
     }
     dispatch({
       type: "PREVIOUS_QUESTION",

@@ -3,6 +3,7 @@ import "../styles.css";
 import AddIcon from "@material-ui/icons/Add";
 import OptionList from "./OptionList";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const dispatch = useDispatch();
@@ -17,11 +18,12 @@ const Form = () => {
   }, []);
 
   const startSurvey = (e) => {
-    e.preventDefault();
+    
     if (options.length > 1 && topicInput.value.trim()) {
       dispatch({ type: "ADD_TOPIC", topic: topicInput.value });
       dispatch({ type: "START_QUESTIONNAIRE", options });
-      console.log();
+    }else {
+      e.preventDefault();
     }
   };
   const handleClick = (value) => {
@@ -75,10 +77,11 @@ const Form = () => {
         </div>
       </div>
       <OptionList />
-
-      <button type="submit" id="start-button" className="main-button button">
-        START
-      </button>
+      <Link to="/questionnaire"  onClick={startSurvey}>
+        <button type="submit" id="start-button" className="main-button button">
+          Start
+        </button>
+      </Link>
     </form>
   );
 };

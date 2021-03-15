@@ -3,6 +3,7 @@ import "../styles.css";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import ReplayIcon from '@material-ui/icons/Replay';
+import {Link} from "react-router-dom";
 
 const Ranking = () => {
   const topic = useSelector((state) => state.topic);
@@ -65,9 +66,9 @@ const Ranking = () => {
       </table>
       <div className="flex-column">
       <ReplayIcon id="icon" className="replay-button" onClick={handleRetakeTest}/>
-      <button className="button main-button" onClick={handleCreateNew}>
+      <Link to="/form"><button className="button main-button" onClick={handleCreateNew}>
         New Questionnaire
-      </button>
+      </button></Link>
       </div>
     </div>
     </div>
