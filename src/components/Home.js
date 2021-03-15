@@ -8,7 +8,7 @@ const Home = () => {
     dispatch({ type: "CREATE_NEW_QUESTIONNAIRE" });
   };
 
-  const handleSeeExample = () => {};
+/*   const handleSeeExample = () => {}; */
 
   return (
     <div className="home">

@@ -12,9 +12,9 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <h1>Pairwise Comparison</h1>
-        <ScrollToTop>
+      <ScrollToTop>
+        <div className="App">
+          <h1>Pairwise Comparison</h1>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/form" component={Form} />
@@ -24,8 +24,8 @@ function App() {
               component={survey.isSurveyFinished ? Ranking : Choice}
             />
           </Switch>
-        </ScrollToTop>
-      </div>
+        </div>
+      </ScrollToTop>
     </Router>
   );
 }

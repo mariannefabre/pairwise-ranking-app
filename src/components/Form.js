@@ -15,14 +15,14 @@ const Form = () => {
 
   useEffect(() => {
     topicInput.value = topic;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startSurvey = (e) => {
-    
     if (options.length > 1 && topicInput.value.trim()) {
       dispatch({ type: "ADD_TOPIC", topic: topicInput.value });
       dispatch({ type: "START_QUESTIONNAIRE", options });
-    }else {
+    } else {
       e.preventDefault();
     }
   };
@@ -77,7 +77,7 @@ const Form = () => {
         </div>
       </div>
       <OptionList />
-      <Link to="/questionnaire"  onClick={startSurvey}>
+      <Link to="/questionnaire" onClick={startSurvey}>
         <button type="submit" id="start-button" className="main-button button">
           Start
         </button>
