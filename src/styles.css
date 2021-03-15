@@ -1,7 +1,6 @@
 #root {
   --main-bg-color: #ffffffee;
-  --second-color: #358cd3;
-  --third-color: #358cd3;
+  --second-color: rgb(219, 201, 62);
   --text-color: #5f5f5f;
   --outline-color: rgb(141, 140, 140);
   background-color: var(--main-bg-color);
@@ -75,9 +74,8 @@ a:active {
   margin: 5vh 24px;
   display: block;
 }
-.home-image{
+.home-image {
   width: 100px;
-  
 }
 .title {
   text-align: left;
@@ -208,17 +206,17 @@ input:focus::placeholder {
   outline: none;
 }
 .main-button {
-  background: var(--third-color);
+  background: var(--second-color);
   color: var(--main-bg-color);
 }
 .main-button:active {
-  box-shadow: 0 0 10px var(--third-color);
+  box-shadow: 0 0 10px var(--second-color);
 }
 .main-button:hover {
-  color: var(--third-color);
+  color: var(--second-color);
   background: var(--main-bg-color);
   transition: all 0.2s ease-in-out;
-  border: 1.5px solid var(--third-color);
+  border: 1.5px solid var(--second-color);
 }
 .second-button {
   background: var(--second-color);
