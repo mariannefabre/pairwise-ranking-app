@@ -12,15 +12,13 @@ const Home = () => {
 
   return (
     <div className="home">
-      <img className="home-image"src="../libra.svg" alt="scale" />
       <h2 className="title">What is Pairwise Comparison?</h2>
       <div className="separator" />
       <h3>A decision making tool</h3>
       <p>
         When choosing between many different options, decisions can become
         challenging, especially if your choices are quite different from one
-        another, if decision criterias are subjective, or if you don't have
-        objective data to use for your decision.
+        another or if decision criterias are subjective.
       </p>
       <p>
         <span className="underline">
@@ -37,8 +35,8 @@ const Home = () => {
       </p>
       <p>
         This method helps you weigh the importance of a number of options and
-        ease your decision making process. It can also be useful to set
-        priorities.{" "}
+        ease decision making process. It can also be useful to set
+        priorities.
       </p>
       <p>
         One example is to decide the relative importance of qualifications,
