@@ -6,7 +6,6 @@
 }
 
 html {
-  background-color: var(--main-bg-color);
   font-size: 18px;
 }
 
@@ -19,6 +18,7 @@ html {
 /* GENERAL */
 
 .App {
+  background-color: var(--main-bg-color);
   min-height: 100vh;
   text-align: center;
   display: flex;
